@@ -1,26 +1,240 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Kernel Aesthetic — base layer.
+   Theme tokens live in tailwind.config.ts (source of truth: DESIGN.md). */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Keeps anchored sections clear of the fixed top nav. */
+    scroll-padding-top: 72px;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    /* Faint phosphor grid — structural, not decorative. */
+    background-image:
+      linear-gradient(rgba(57, 255, 20, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(57, 255, 20, 0.025) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  ::selection {
+    background: #39ff14;
+    color: #053900;
+  }
+
+  :focus-visible {
+    outline: 1px solid #39ff14;
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Blinking block cursor (the only element allowed a low glow, per DESIGN.md). */
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1.06s steps(1) infinite;
+  box-shadow: 0 0 10px #39ff1433;
+}
+
+/* Fast line reveal for terminal output. Delay is set inline per line. */
+@keyframes line-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.term-line {
+  animation: line-in 140ms ease-out both;
+}
+
+/* Scroll-triggered terminal typing (hero seed, experience, contact).
+   Lines tagged [data-tline] render fully in the SSR HTML; they are hidden
+   only when JS can reveal them (scripting: enabled) and motion is allowed.
+   useTypeOnView flips the root to "play" once the window is ~100% in view,
+   and each line prints with the inline delay it assigned (document order). */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  [data-type-phase="armed"] [data-tline] {
+    opacity: 0;
+  }
+
+  [data-type-phase="play"] [data-tline] {
+    animation: line-in 140ms ease-out both;
+  }
+}
+
+/* Subtle scanlines inside the shell window — CRT phosphor feel. */
+.scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.14) 0,
+    rgba(0, 0, 0, 0.14) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* ---------------------------------------------------------------------------
+ * Animated background — phosphor ambience behind all content.
+ * Three compositor-friendly layers (transform/opacity only):
+ * drifting major grid, breathing glow, and a slow scanline sweep.
+ * Structural, not decorative — removed entirely under reduced motion.
+ * ------------------------------------------------------------------------ */
+.bg-fx {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Major grid (96px) sliding exactly one tile per loop — seamless. */
+.bg-fx-grid {
+  position: absolute;
+  inset: -96px;
+  background-image:
+    linear-gradient(rgba(57, 255, 20, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57, 255, 20, 0.045) 1px, transparent 1px);
+  background-size: 96px 96px;
+  animation: bg-grid-drift 80s linear infinite;
+}
+
+/* Faint radial bloom that slowly breathes. */
+.bg-fx-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      55% 40% at 50% 0%,
+      rgba(57, 255, 20, 0.05),
+      transparent 70%
+    ),
+    radial-gradient(
+      35% 30% at 85% 100%,
+      rgba(57, 255, 20, 0.035),
+      transparent 70%
+    );
+  animation: bg-glow-breathe 9s ease-in-out infinite;
+}
+
+/* One slow scanline pass down the viewport, then repeat. */
+.bg-fx-sweep {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 22vh;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(57, 255, 20, 0.045),
+    transparent
+  );
+  animation: bg-sweep 16s linear infinite;
+}
+
+@keyframes bg-grid-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(96px, 96px, 0);
+  }
+}
+
+@keyframes bg-glow-breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes bg-sweep {
+  from {
+    transform: translate3d(0, -24vh, 0);
+  }
+  to {
+    transform: translate3d(0, 124vh, 0);
+  }
+}
+
+/* Section headings fade/slide in as they enter the viewport.
+   Progressive enhancement: only where scroll-driven animations exist;
+   everywhere else headings render statically. */
+@keyframes section-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal-on-scroll {
+      animation: section-reveal ease-out both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
+}
+
+/* Thin, terminal-appropriate scrollbars. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3c4b35 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3c4b35;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* prefers-reduced-motion: everything renders instantly, cursor stops blinking,
+   and the ambient background layer is removed entirely. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .bg-fx {
+    display: none;
+  }
 }

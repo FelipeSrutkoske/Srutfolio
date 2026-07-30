@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "title": "Portfolio — Fullstack Developer",
+    "description": "Portfolio of a fullstack developer: who I am, projects, skills, experience, and contact."
+  },
+  "brand": "felipesrutkoske@dev",
+  "skip": "Skip to content",
+  "nav": {
+    "aria": "Main navigation",
+    "whoami": "whoami",
+    "projects": "projects",
+    "skills": "skills",
+    "experience": "experience",
+    "contact": "contact",
+    "downloadCv": "resume.pdf",
+    "paths": {
+      "whoami": "~/whoami.md",
+      "projects": "~/projects.sh",
+      "skills": "~/skills.json",
+      "experience": "~/experience.git",
+      "contact": "~/contact.log"
+    },
+    "github": "Open GitHub in a new tab"
+  },
+  "lang": {
+    "aria": "Select language",
+    "en": "EN",
+    "pt": "PT-BR"
+  },
+  "hero": {
+    "windowPath": "felipesrutkoske@portfolio: ~",
+    "hint": "tip: type \"help\" to list the commands — or tap a chip",
+    "seed": {
+      "whoamiCmd": "whoami",
+      "introCmd": "cat intro.txt",
+      "introText": "Backend/Fullstack Developer with experience in multi-client enterprise systems, relational databases, Linux infra, and production automation.",
+      "stackLabel": "Stack"
+    }
+  },
+  "shell": {
+    "prompt": "$ ",
+    "placeholder": "type a command...",
+    "ariaInput": "Interactive terminal. Type a command and press Enter.",
+    "helpAria": "Show or hide the command list",
+    "tapLabel": "$ run command:",
+    "commands": {
+      "whoami": "whoami",
+      "projects": "projects",
+      "skills": "skills",
+      "experience": "experience",
+      "contact": "contact",
+      "cv": "cv",
+      "help": "help",
+      "clear": "clear",
+      "sudo": "sudo"
+    },
+    "helpText": "Available commands:",
+    "notFound": "command not found",
+    "unknown": "type \"help\" to see the command list.",
+    "sudo": "permission denied: nice try. root is reserved for whoever buys the coffee.",
+    "navigating": "→ navigating to #{section}",
+    "candidates": "matches:",
+    "output": {
+      "whoamiOpen": "[open] ~/portfolio/whoami.md",
+      "projectsFound": "[ok] {count} files found in ~/portfolio/projects/",
+      "skillsFound": "[ok] htop --tree → {count} active processes",
+      "experienceFound": "[ok] git log --graph → {count} commits",
+      "contactOpen": "[ok] contact channels open"
+    },
+    "commandHelp": {
+      "whoami": "Shows my narrative and what sets me apart.",
+      "projects": "Lists the selected projects.",
+      "skills": "Displays the skills matrix.",
+      "experience": "Shows the experience timeline.",
+      "contact": "Opens the contact links.",
+      "cv": "Downloads the resume PDF file.",
+      "help": "Lists all available commands.",
+      "clear": "Clears the terminal history.",
+      "sudo": "Tries to escalate privileges. Good luck."
+    }
+  },
+  "whoami": {
+    "title": "whoami",
+    "heading": "Backend / Fullstack Developer with hands-on production experience.",
+    "intro": "I build, evolve, and maintain multi-tenant enterprise systems. My domain spans relational database modeling (MySQL, Oracle, PostgreSQL, SQLite), backend development (PHP, Node.js, NestJS), application interfaces (Next.js, React, React Native, Angular), Linux infrastructure, SSH deployments, internal scripts, and AI agent-assisted workflows.",
+    "tagline": "From database & backend logic to deployment and monitoring on Linux servers.",
+    "production": "Hands-on experience on the production front line: investigating security incidents, reading logs, optimizing SQL queries, and automating tasks (Python/JS). I focus on delivering resilient code with end-to-end ownership.",
+    "quotes": [
+      "Backend / Fullstack Developer.",
+      "Production support, system evolution & automation.",
+      "From relational data modeling to Linux server deployment & security."
+    ],
+    "config": {
+      "section": "[identity]",
+      "nameKey": "name",
+      "roleKey": "role",
+      "focusKey": "focus",
+      "focusValue": "backend, production support & automation",
+      "taglineKey": "tagline"
+    },
+    "diff": {
+      "header": "@@ ownership.patch @@",
+      "minus": "write code and ignore how it executes in production",
+      "plus": "model databases, build backend/frontend, automate tasks, and ensure live system resilience"
+    }
+  },
+  "projects": {
+    "title": "projects",
+    "heading": "Selected projects",
+    "description": "Three cases that show technical depth, initiative, and real impact.",
+    "changelog": "### changelog",
+    "flags": {
+      "repo": "--view-repo",
+      "demo": "--view-demo",
+      "paper": "--read-paper"
+    },
+    "privateNote": "[ private code — impact described without exposing implementation ]"
+  },
+  "skills": {
+    "title": "skills",
+    "heading": "Skills matrix",
+    "description": "Stack organized by layer. Add or remove items by editing data/skills.ts.",
+    "windowPath": "htop --sort-by=category",
+    "tasks": "Tasks: {count} total, {count} running",
+    "load": "Load average: 0.42 0.24 0.13",
+    "headers": {
+      "pid": "PID",
+      "process": "PROCESS",
+      "cpu": "CPU%",
+      "bar": "LOAD",
+      "status": "STATUS"
+    },
+    "running": "running"
+  },
+  "experience": {
+    "title": "experience",
+    "heading": "Experience timeline",
+    "description": "A path of depth: from production operations to fullstack deliveries.",
+    "windowPath": "~/portfolio/experience.git",
+    "cmd": "git log --graph --all --decorate",
+    "author": "Author:",
+    "date": "Date:",
+    "head": "(HEAD -> main)",
+    "merge": "Merge branch 'production-ops' into 'main'"
+  },
+  "contact": {
+    "title": "contact",
+    "heading": "Let's talk",
+    "description": "Open to opportunities, freelance work, and exchanging ideas.",
+    "windowPath": "~/portfolio/contact.log",
+    "cmd": "./contact.sh --open-channels",
+    "ok": "[OK]",
+    "emailLabel": "email",
+    "githubLabel": "github",
+    "linkedinLabel": "linkedin",
+    "cta": "Send an email or connect on LinkedIn.",
+    "flags": {
+      "email": "--send-email",
+      "github": "--follow-github",
+      "linkedin": "--connect-linkedin"
+    }
+  },
+  "footer": {
+    "exit": "$ exit",
+    "status": "[ process finished — exit code 0 ]",
+    "rights": "all rights reserved"
+  }
+}

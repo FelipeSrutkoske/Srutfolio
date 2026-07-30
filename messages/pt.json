@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "title": "Portfólio — Fullstack Developer",
+    "description": "Portfólio de um desenvolvedor fullstack: quem eu sou, projetos, habilidades, experiência e contato."
+  },
+  "brand": "felipesrutkoske@dev",
+  "skip": "Pular para o conteúdo",
+  "nav": {
+    "aria": "Navegação principal",
+    "whoami": "whoami",
+    "projects": "projects",
+    "skills": "skills",
+    "experience": "experience",
+    "contact": "contact",
+    "downloadCv": "curriculo.pdf",
+    "paths": {
+      "whoami": "~/whoami.md",
+      "projects": "~/projects.sh",
+      "skills": "~/skills.json",
+      "experience": "~/experience.git",
+      "contact": "~/contact.log"
+    },
+    "github": "Abrir GitHub em nova aba"
+  },
+  "lang": {
+    "aria": "Selecionar idioma",
+    "en": "EN",
+    "pt": "PT-BR"
+  },
+  "hero": {
+    "windowPath": "felipesrutkoske@portfolio: ~",
+    "hint": "dica: digite \"help\" para listar os comandos — ou toque em um chip",
+    "seed": {
+      "whoamiCmd": "whoami",
+      "introCmd": "cat intro.txt",
+      "introText": "Desenvolvedor Backend/Fullstack com experiência em sistemas corporativos multi-empresa, banco de dados, infraestrutura Linux e automação em produção.",
+      "stackLabel": "Stack"
+    }
+  },
+  "shell": {
+    "prompt": "$ ",
+    "placeholder": "digite um comando...",
+    "ariaInput": "Terminal interativo. Digite um comando e pressione Enter.",
+    "helpAria": "Mostrar ou ocultar a lista de comandos",
+    "tapLabel": "$ executar comando:",
+    "commands": {
+      "whoami": "whoami",
+      "projects": "projects",
+      "skills": "skills",
+      "experience": "experience",
+      "contact": "contact",
+      "cv": "cv",
+      "help": "help",
+      "clear": "clear",
+      "sudo": "sudo"
+    },
+    "helpText": "Comandos disponíveis:",
+    "notFound": "comando não encontrado",
+    "unknown": "digite \"help\" para ver a lista de comandos.",
+    "sudo": "permission denied: nice try. root é só para quem paga o café.",
+    "navigating": "→ navegando para #{section}",
+    "candidates": "correspondências:",
+    "output": {
+      "whoamiOpen": "[open] ~/portfolio/whoami.md",
+      "projectsFound": "[ok] {count} arquivos encontrados em ~/portfolio/projects/",
+      "skillsFound": "[ok] htop --tree → {count} processos ativos",
+      "experienceFound": "[ok] git log --graph → {count} commits",
+      "contactOpen": "[ok] canais de contato abertos"
+    },
+    "commandHelp": {
+      "whoami": "Mostra a narrativa e o diferencial.",
+      "projects": "Lista os projetos selecionados.",
+      "skills": "Exibe a matriz de habilidades.",
+      "experience": "Mostra a timeline de experiência.",
+      "contact": "Abre os links de contato.",
+      "cv": "Baixa o currículo em PDF (Curriculo_Felipe-Srutkoske.pdf).",
+      "help": "Lista todos os comandos disponíveis.",
+      "clear": "Limpa o histórico do terminal.",
+      "sudo": "Tenta elevar privilégios. Boa sorte."
+    }
+  },
+  "whoami": {
+    "title": "whoami",
+    "heading": "Desenvolvedor Backend / Fullstack com atuação prática em produção.",
+    "intro": "Desenvolvo, evoluo e sustento sistemas corporativos multi-empresa. Minha atuação vai desde a modelagem de banco de dados (MySQL, Oracle, PostgreSQL, SQLite), backend (PHP, Node.js, NestJS) e aplicações (Next.js, React, React Native, Angular) até a infraestrutura Linux, deploys via SSH, automações internas e fluxo de desenvolvimento com Agentes de IA.",
+    "tagline": "Do banco de dados e backend ao deploy e monitoramento em ambientes Linux.",
+    "production": "Experiência sólida na linha de frente em produção: investigo incidentes de segurança, analiso logs, otimizo consultas SQL e crio automações (Python/JS). Acredito na entrega de código confiável com acompanhamento de ponta a ponta.",
+    "quotes": [
+      "Desenvolvedor Backend / Fullstack.",
+      "Sustentação, evolução de sistemas e automação em produção.",
+      "Da modelagem relacional ao deploy e segurança em servidores Linux."
+    ],
+    "config": {
+      "section": "[identity]",
+      "nameKey": "name",
+      "roleKey": "role",
+      "focusKey": "focus",
+      "focusValue": "backend, sustentação em produção e automações",
+      "taglineKey": "tagline"
+    },
+    "diff": {
+      "header": "@@ ownership.patch @@",
+      "minus": "apenas implementar o código e não acompanhar a execução em produção",
+      "plus": "modelar o banco, desenvolver backend/frontend, automatizar rotinas e garantir resiliência em produção"
+    }
+  },
+  "projects": {
+    "title": "projects",
+    "heading": "Projetos selecionados",
+    "description": "Três casos que mostram profundidade técnica, iniciativa e impacto real.",
+    "changelog": "### changelog",
+    "flags": {
+      "repo": "--view-repo",
+      "demo": "--view-demo",
+      "paper": "--read-paper"
+    },
+    "privateNote": "[ código privado — impacto descrito sem expor implementação ]"
+  },
+  "skills": {
+    "title": "skills",
+    "heading": "Matriz de habilidades",
+    "description": "Stack organizada por camada. Adicione ou remova itens editando data/skills.ts.",
+    "windowPath": "htop --sort-by=category",
+    "tasks": "Tasks: {count} total, {count} running",
+    "load": "Load average: 0.42 0.24 0.13",
+    "headers": {
+      "pid": "PID",
+      "process": "PROCESS",
+      "cpu": "CPU%",
+      "bar": "LOAD",
+      "status": "STATUS"
+    },
+    "running": "running"
+  },
+  "experience": {
+    "title": "experience",
+    "heading": "Timeline de experiência",
+    "description": "Caminho de profundidade: de operações de produção a entregas fullstack.",
+    "windowPath": "~/portfolio/experience.git",
+    "cmd": "git log --graph --all --decorate",
+    "author": "Author:",
+    "date": "Date:",
+    "head": "(HEAD -> main)",
+    "merge": "Merge branch 'production-ops' into 'main'"
+  },
+  "contact": {
+    "title": "contact",
+    "heading": "Vamos conversar",
+    "description": "Aberto a oportunidades, freelas e troca de ideias.",
+    "windowPath": "~/portfolio/contact.log",
+    "cmd": "./contact.sh --open-channels",
+    "ok": "[OK]",
+    "emailLabel": "email",
+    "githubLabel": "github",
+    "linkedinLabel": "linkedin",
+    "cta": "Envie um e-mail ou conecte-se no LinkedIn.",
+    "flags": {
+      "email": "--send-email",
+      "github": "--follow-github",
+      "linkedin": "--connect-linkedin"
+    }
+  },
+  "footer": {
+    "exit": "$ exit",
+    "status": "[ processo finalizado — exit code 0 ]",
+    "rights": "todos os direitos reservados"
+  }
+}
