@@ -180,8 +180,8 @@ export const projects: Project[] = [
       "Segurança: diagnóstico e mitigação de comprometimento de servidor Linux (shell remoto e mineração de criptomoedas)",
     ],
     links: {},
-    statusNote: "código privado — impacto descrito sem expor implementação",
-    statusNoteEn: "private code — impact described without exposing implementation",
+    statusNote: "código privado",
+    statusNoteEn: "private code",
     titleEn: "Enterprise Modules & Infrastructure (Skypass)",
     summaryEn:
       "Development of enterprise modules for multi-client systems at Skypass System, along with internal automations and Linux server security.",

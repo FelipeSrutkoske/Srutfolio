@@ -35,15 +35,15 @@ export default function WindowFrame({
   return (
     <section
       id={id}
-      className={`overflow-hidden border border-outline-variant bg-surface-container-lowest transition-all duration-200 hover:border-primary-container/40 hover:shadow-[0_0_20px_rgba(57,255,20,0.07)] ${className}`}
+      className={`min-w-0 overflow-hidden border border-outline-variant/80 bg-surface-container-lowest transition-all duration-200 hover:border-primary-container/60 hover:shadow-[0_0_20px_rgba(57,255,20,0.07)] ${className}`}
     >
-      <header className="flex items-center justify-between gap-4 border-b border-outline-variant bg-surface-container-low px-3 py-2">
+      <header className="flex items-center justify-between gap-4 border-b border-outline-variant/80 bg-surface-container-low px-3 py-2">
         <Dots />
         <span className="truncate text-code-sm text-on-surface-variant">
           {path}
         </span>
       </header>
-      <div className={`relative ${bodyClassName}`}>{children}</div>
+      <div className={`min-w-0 ${bodyClassName}`}>{children}</div>
     </section>
   );
 }

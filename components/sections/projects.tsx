@@ -19,8 +19,11 @@ const EXT_BY_ID: Record<string, string> = {
  * title as heading, stack as `[ tag ]` chips, highlights as changelog
  * additions, links as CLI-flag buttons. Hover shifts the outline to
  * primary; keyboard focus shifts it to tertiary (DESIGN.md).
- * The frame is a flex column (header + flex-1 body) so equal-height grid
- * rows never clip the footer links; a gentle lift rewards hover.
+ * Cards use CSS subgrid (row-span-6: header, title, summary, stack,
+ * changelog, footer) so every section shares the parent's row tracks —
+ * titles align with titles, changelogs with changelogs, footers with
+ * footers across every card in the same grid row, regardless of how
+ * much content each card has. A gentle lift rewards hover.
  */
 function ProjectCard({ project, locale }: { project: Project; locale: string }) {
   const t = useTranslations("projects");
@@ -37,27 +40,29 @@ function ProjectCard({ project, locale }: { project: Project; locale: string }) 
   return (
     <WindowFrame
       path={`~/portfolio/projects/${project.id}${EXT_BY_ID[project.id] ?? ".ts"}`}
-      className="flex h-full flex-col transition-[border-color,transform] duration-150 hover:border-primary-container focus-within:border-tertiary-fixed-dim motion-safe:hover:-translate-y-0.5"
-      bodyClassName="flex flex-1 flex-col p-4 md:p-6"
+      className="row-span-6 grid grid-cols-1 grid-rows-subgrid gap-y-0 transition-[border-color,transform] duration-150 hover:border-primary-container focus-within:border-tertiary-fixed-dim motion-safe:hover:-translate-y-0.5"
+      bodyClassName="row-span-5 grid grid-cols-1 grid-rows-subgrid gap-y-0 p-4 md:p-6"
     >
-      {/* Title & Summary */}
-      <div className="flex flex-col gap-2">
-        <h3 className="text-body-lg font-bold leading-snug text-on-surface">
-          <span className="text-primary-container"># </span>
-          {title}
-        </h3>
-        <p className="text-code-sm text-on-surface-variant leading-relaxed">{summary}</p>
-      </div>
+      {/* Row: Title (aligned across cards) */}
+      <h3 className="text-body-lg font-bold leading-snug text-on-surface">
+        <span className="text-primary-container"># </span>
+        {title}
+      </h3>
 
-      {/* Stack Tags */}
-      <div className="my-4 flex flex-wrap content-start gap-1.5">
+      {/* Row: Summary (aligned across cards) */}
+      <p className="mt-2 text-code-sm text-on-surface-variant leading-relaxed">
+        {summary}
+      </p>
+
+      {/* Row: Stack Tags (aligned across cards) */}
+      <div className="mt-3 flex flex-wrap content-start gap-1.5 pt-1">
         {project.stack.map((tech) => (
           <Chip key={tech}>{tech}</Chip>
         ))}
       </div>
 
-      {/* Changelog Section */}
-      <div className="mt-auto border-t border-outline-variant/60 pt-4 flex flex-col gap-2">
+      {/* Row: Changelog (aligned across cards) */}
+      <div className="mt-4 flex flex-col gap-2 border-t border-outline-variant/60 pt-4">
         <p className="text-label-caps font-bold uppercase tracking-wider text-secondary-fixed-dim">
           {t("changelog")}
         </p>
@@ -67,13 +72,15 @@ function ProjectCard({ project, locale }: { project: Project; locale: string }) 
               <span aria-hidden="true" className="shrink-0 text-primary-container">
                 +
               </span>
-              <span className="text-on-surface-variant leading-relaxed">{highlight}</span>
+              <span className="break-words text-on-surface-variant leading-relaxed">
+                {highlight}
+              </span>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Repository / Status Footer */}
+      {/* Row: Repository / Status Footer (aligned across cards) */}
       <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-outline-variant/60 pt-3">
         {project.links.repo ? (
           <FlagLink href={project.links.repo} external>
@@ -91,7 +98,7 @@ function ProjectCard({ project, locale }: { project: Project; locale: string }) 
           </FlagLink>
         ) : null}
         {!hasLinks ? (
-          <span className="text-code-sm text-on-surface-variant">
+          <span className="inline-block border border-outline-variant/60 bg-surface-container-low px-3 py-1.5 text-code-sm font-medium text-on-surface-variant">
             [ {statusNote ?? t("privateNote")} ]
           </span>
         ) : null}

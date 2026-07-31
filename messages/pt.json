@@ -114,7 +114,7 @@
       "demo": "--view-demo",
       "paper": "--read-paper"
     },
-    "privateNote": "[ código privado — impacto descrito sem expor implementação ]"
+    "privateNote": "[ código privado ]"
   },
   "skills": {
     "title": "skills",
