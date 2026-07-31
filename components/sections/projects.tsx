@@ -37,39 +37,44 @@ function ProjectCard({ project, locale }: { project: Project; locale: string }) 
   return (
     <WindowFrame
       path={`~/portfolio/projects/${project.id}${EXT_BY_ID[project.id] ?? ".ts"}`}
-      className="row-span-5 grid grid-rows-subgrid transition-[border-color,transform] duration-150 hover:border-primary-container focus-within:border-tertiary-fixed-dim motion-safe:hover:-translate-y-0.5"
-      bodyClassName="row-span-5 grid grid-rows-subgrid gap-4 p-4 md:p-6"
+      className="flex h-full flex-col transition-[border-color,transform] duration-150 hover:border-primary-container focus-within:border-tertiary-fixed-dim motion-safe:hover:-translate-y-0.5"
+      bodyClassName="flex flex-1 flex-col p-4 md:p-6"
     >
-      <h3 className="text-body-lg font-bold leading-snug text-on-surface">
-        <span className="text-primary-container"># </span>
-        {title}
-      </h3>
+      {/* Title & Summary */}
+      <div className="flex flex-col gap-2">
+        <h3 className="text-body-lg font-bold leading-snug text-on-surface">
+          <span className="text-primary-container"># </span>
+          {title}
+        </h3>
+        <p className="text-code-sm text-on-surface-variant leading-relaxed">{summary}</p>
+      </div>
 
-      <p className="text-code-sm text-on-surface-variant">{summary}</p>
-
-      <div className="flex flex-wrap content-start gap-1.5">
+      {/* Stack Tags */}
+      <div className="my-4 flex flex-wrap content-start gap-1.5">
         {project.stack.map((tech) => (
           <Chip key={tech}>{tech}</Chip>
         ))}
       </div>
 
-      <div className="flex flex-col justify-start">
-        <p className="text-label-caps font-bold uppercase text-secondary-fixed-dim">
+      {/* Changelog Section */}
+      <div className="mt-auto border-t border-outline-variant/60 pt-4 flex flex-col gap-2">
+        <p className="text-label-caps font-bold uppercase tracking-wider text-secondary-fixed-dim">
           {t("changelog")}
         </p>
-        <ul className="mt-2 space-y-1 text-code-sm">
+        <ul className="space-y-2 text-code-sm">
           {highlights.map((highlight) => (
-            <li key={highlight} className="flex gap-2">
-              <span aria-hidden="true" className="text-primary-container">
+            <li key={highlight} className="flex items-start gap-2">
+              <span aria-hidden="true" className="shrink-0 text-primary-container">
                 +
               </span>
-              <span className="text-on-surface-variant">{highlight}</span>
+              <span className="text-on-surface-variant leading-relaxed">{highlight}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2 border-t border-outline-variant pt-3">
+      {/* Repository / Status Footer */}
+      <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-outline-variant/60 pt-3">
         {project.links.repo ? (
           <FlagLink href={project.links.repo} external>
             {t("flags.repo")}
