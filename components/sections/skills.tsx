@@ -5,16 +5,22 @@ import { pick } from "@/lib/localize";
 import { SectionHeading } from "@/components/ui";
 import WindowFrame from "@/components/window-frame";
 
-/** ASCII load bar: `[|||||-----]` — filled pipes = round(level / 10). */
+/** ASCII load bar: `[████████░░░░]` — block characters filled = round(level / 10). */
 function loadBar(percent: number): string {
   const filled = Math.round(percent / 10);
-  return `[${"|".repeat(filled)}${"-".repeat(10 - filled)}]`;
+  return `[${"█".repeat(filled)}${"░".repeat(10 - filled)}]`;
+}
+
+function getSkillColorClass(level: number): string {
+  if (level >= 80) return "text-primary-container";
+  if (level >= 50) return "text-secondary-fixed-dim";
+  return "text-error";
 }
 
 /**
  * Skills — htop-style process table. Each category is a process group
  * (amber header); each skill is a running process whose CPU% and ASCII
- * load bar come straight from its real `level` (0-100) in data/skills.ts.
+ * block load bar come straight from its real `level` (0-100) in data/skills.ts.
  */
 export default function Skills({ locale }: { locale: string }) {
   const t = useTranslations("skills");
@@ -36,7 +42,7 @@ export default function Skills({ locale }: { locale: string }) {
         </div>
 
         {/* Header row */}
-        <div className="grid grid-cols-[1fr_6.5rem] gap-2 px-2 py-1 text-label-caps font-bold uppercase text-on-surface-variant sm:grid-cols-[3.5rem_1fr_3.5rem_6.5rem_4.5rem]">
+        <div className="grid grid-cols-[1fr_7.5rem] gap-2 px-2 py-1 text-label-caps font-bold uppercase text-on-surface-variant sm:grid-cols-[3.5rem_1fr_3.5rem_7.5rem_4.5rem]">
           <span className="hidden sm:inline">{t("headers.pid")}</span>
           <span>{t("headers.process")}</span>
           <span className="hidden sm:inline">{t("headers.cpu")}</span>
@@ -52,28 +58,23 @@ export default function Skills({ locale }: { locale: string }) {
             </p>
             {category.items.map((item, itemIdx) => {
               const level = item.level;
+              const colorClass = getSkillColorClass(level);
               return (
                 <div
                   key={item.name}
-                  className="grid grid-cols-[1fr_6.5rem] items-baseline gap-2 border-b border-outline-variant/40 px-2 py-1 text-code-sm transition-colors hover:bg-surface-container sm:grid-cols-[3.5rem_1fr_3.5rem_6.5rem_4.5rem]"
+                  className="grid grid-cols-[1fr_7.5rem] items-baseline gap-2 border-b border-outline-variant/40 px-2 py-1 text-code-sm transition-colors hover:bg-surface-container sm:grid-cols-[3.5rem_1fr_3.5rem_7.5rem_4.5rem]"
                 >
                   <span className="hidden text-on-surface-variant sm:inline">
                     {String(1200 + itemIdx * 7 + item.name.length).padStart(4, "0")}
                   </span>
                   <span className="text-on-surface">{item.name}</span>
-                  <span
-                    className={`hidden sm:inline ${
-                      level > 60
-                        ? "text-secondary-fixed-dim"
-                        : "text-primary-container"
-                    }`}
-                  >
+                  <span className={`hidden sm:inline ${colorClass}`}>
                     {level}%
                   </span>
-                  <span aria-hidden="true" className="text-primary-container">
+                  <span aria-hidden="true" className={colorClass}>
                     {loadBar(level)}
                   </span>
-                  <span className="hidden text-primary-container sm:inline">
+                  <span className={`hidden sm:inline ${colorClass}`}>
                     {t("running")}
                   </span>
                 </div>

@@ -48,10 +48,7 @@ export default async function HomePage({ params }: HomePageProps) {
         </div>
       </main>
 
-      {/* Extra bottom padding clears the mobile bottom-docked nav. */}
-      <div className="pb-20 md:pb-0">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

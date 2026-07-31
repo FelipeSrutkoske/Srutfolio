@@ -20,6 +20,9 @@ export interface Project {
     demo?: string;
     paper?: string;
   };
+  /** Nota de status personalizada quando não houver links (ex: "em desenvolvimento"). */
+  statusNote?: string;
+  statusNoteEn?: string;
   /** Sobrescritas opcionais em inglês (fallback = campos padrão em PT). */
   titleEn?: string;
   summaryEn?: string;
@@ -29,9 +32,9 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "tcc",
-    title: "TrackIt — Plataforma de Auditoria e Logística (Nota 9.3)",
+    title: "TrackIt — Plataforma de Auditoria e Logística",
     summary:
-      "Trabalho de conclusão de curso desenvolvido 100% individualmente. Plataforma de auditabilidade e rastreabilidade de entregas constituída por API REST em NestJS, dashboard web em Next.js e aplicativo mobile em React Native.",
+      "Plataforma de auditabilidade e rastreabilidade de entregas constituída por API REST em NestJS, dashboard web em Next.js e aplicativo mobile em React Native.",
     stack: [
       "NestJS",
       "Next.js",
@@ -44,7 +47,7 @@ export const projects: Project[] = [
       "BrasilAPI",
     ],
     highlights: [
-      "Nota 9.3/10 no TCC com desenvolvimento fullstack individual",
+      "Desenvolvimento fullstack individual da solução",
       "Arquitetura fullstack: Backend NestJS, Dashboard Web em Next.js e App Mobile com React Native/Expo",
       "Modelagem completa do banco de dados relacional e Diagrama Entidade-Relacionamento (DER)",
       "Navegação com Google Maps API (rotas, distância e destino) com testes de integração em Jest (mock de fetch)",
@@ -53,11 +56,11 @@ export const projects: Project[] = [
     links: {
       repo: "https://github.com/FelipeSrutkoske/TCC_TrackIt",
     },
-    titleEn: "TrackIt — Auditability & Delivery Tracking (Grade 9.3)",
+    titleEn: "TrackIt — Auditability & Delivery Tracking",
     summaryEn:
-      "Individually developed graduation thesis (Grade 9.3/10). A full-stack delivery tracking and auditability platform with NestJS backend, Next.js web dashboard, and React Native mobile app.",
+      "A full-stack delivery tracking and auditability platform with NestJS backend, Next.js web dashboard, and React Native mobile app.",
     highlightsEn: [
-      "Grade 9.3/10 on Graduation Thesis (100% individually built)",
+      "Fullstack individual development of the solution",
       "Fullstack architecture: NestJS Backend, Next.js Web Dashboard, and React Native/Expo Mobile App",
       "Complete relational database design and Entity-Relationship Diagram (ERD)",
       "Driver map routes, distance, and destination powered by Google Maps API with Jest integration tests",
@@ -73,24 +76,25 @@ export const projects: Project[] = [
       "React Native",
       "Expo",
       "TypeScript",
-      "SQLite",
       "Clean Architecture",
       "AlarmManager",
       "Reanimated",
     ],
     highlights: [
       "Agendamento de doses diárias e controle automático de estoque 100% offline",
-      "Arquitetura Clean Architecture com persistência em banco de dados SQLite local",
+      "Arquitetura Clean Architecture com persistência em banco de dados local",
       "Módulo nativo AlarmManager para notificações no horário exato com confirmação de dose na tela de bloqueio",
       "Acessibilidade com animações via Reanimated, validação rigorosa de formulários e testes automatizados",
     ],
     links: {},
+    statusNote: "em desenvolvimento",
+    statusNoteEn: "in development",
     titleEn: "Memedio — Offline Medication Manager",
     summaryEn:
       "100% offline Android mobile application for medication management, daily dose scheduling, and automatic pill inventory control.",
     highlightsEn: [
       "Daily dose scheduling and automated medication inventory control working 100% offline",
-      "Clean Architecture structure coupled with local SQLite database storage",
+      "Clean Architecture structure coupled with local database storage",
       "Native AlarmManager module integration for exact-time alerts with lock-screen dose confirmation",
       "Accessibility enhanced with Reanimated animations, form validation, and automated testing",
     ],
@@ -113,7 +117,9 @@ export const projects: Project[] = [
       "Integração com API v3 do VirusTotal via menu de contexto no clique direito para análise direta de links e textos",
       "Submissão automática e polling de URLs ainda não catalogadas na base de inteligência",
     ],
-    links: {},
+    links: {
+      repo: "https://github.com/FelipeSrutkoske/VT_SHIELD",
+    },
     titleEn: "VT Shield — URL Cybersecurity Scanner",
     summaryEn:
       "Chromium extension (Manifest V3) for real-time link and text cyber threat scanning using the VirusTotal API v3.",
@@ -128,14 +134,13 @@ export const projects: Project[] = [
     id: "vehigo",
     title: "VehiGo — Sistema de Aluguel de Veículos (Microsserviços)",
     summary:
-      "Plataforma distribuída para gestão e agendamento de aluguel de veículos baseada em arquitetura de microsserviços, API Gateway Nginx, cache distribuído Redis e app mobile React Native.",
+      "Plataforma distribuída para gestão e agendamento de aluguel de veículos baseada em arquitetura de microsserviços, API Gateway Nginx e app mobile React Native.",
     stack: [
       "Node.js",
       "TypeScript",
       "Express",
       "TypeORM",
       "PostgreSQL",
-      "Redis",
       "Nginx",
       "React Native",
       "Expo",
@@ -144,18 +149,20 @@ export const projects: Project[] = [
     highlights: [
       "Arquitetura de microsserviços desacoplados (usuarios-service, veiculos-service, reservas-service)",
       "API Gateway centralizado em Nginx com gerenciamento de Ingress e proxies reversos",
-      "Persistência relacional em PostgreSQL 15 com TypeORM e camada de cache de alta performance com Redis 7",
+      "Persistência relacional em PostgreSQL 15 com TypeORM",
       "Aplicativo mobile iOS/Android em React Native com Expo, autenticação JWT, busca com filtros e seleção de veículos",
       "Modelagem arquitetural completa com Diagramas C4, DDD (Domain-Driven Design), ADRs e especificações OpenAPI 3.0",
     ],
-    links: {},
+    links: {
+      repo: "https://github.com/FelipeSrutkoske/VehiGo",
+    },
     titleEn: "VehiGo — Vehicle Rental Distributed Platform",
     summaryEn:
-      "Distributed vehicle rental and reservation platform engineered with a microservices architecture, Nginx API Gateway, Redis distributed caching, and React Native mobile app.",
+      "Distributed vehicle rental and reservation platform engineered with a microservices architecture, Nginx API Gateway, and React Native mobile app.",
     highlightsEn: [
       "Decoupled microservices architecture (usuarios-service, veiculos-service, reservas-service)",
       "Centralized Nginx API Gateway handling Ingress routing and reverse proxies",
-      "Relational data storage with PostgreSQL 15 & TypeORM combined with Redis 7 high-performance caching layer",
+      "Relational data storage with PostgreSQL 15 & TypeORM",
       "React Native Expo mobile app for iOS/Android featuring JWT authentication, vehicle filtering, and booking management",
       "Architectural design documented with C4 Diagrams, Domain-Driven Design (DDD), ADRs, and OpenAPI 3.0 specs",
     ],
@@ -164,7 +171,7 @@ export const projects: Project[] = [
     id: "skypass-features",
     title: "Módulos Corporativos & Sustentação (Skypass)",
     summary:
-      "Desenvolvimento do zero de módulos corporativos de alto impacto para múltiplos clientes na Skypass System, além de automações internas e segurança de servidores Linux.",
+      "Desenvolvimento de módulos corporativos para múltiplos clientes na Skypass System, além de automações internas e segurança de servidores Linux.",
     stack: ["PHP", "Node.js", "MySQL", "Oracle", "Nodemailer", "Python", "Linux"],
     highlights: [
       "Ordem de Serviço criada do zero: modelagem de banco relacional (MySQL/Oracle), backend PHP, telas e deploy",
@@ -173,9 +180,11 @@ export const projects: Project[] = [
       "Segurança: diagnóstico e mitigação de comprometimento de servidor Linux (shell remoto e mineração de criptomoedas)",
     ],
     links: {},
+    statusNote: "código privado — impacto descrito sem expor implementação",
+    statusNoteEn: "private code — impact described without exposing implementation",
     titleEn: "Enterprise Modules & Infrastructure (Skypass)",
     summaryEn:
-      "Zero-to-production development of high-impact enterprise modules for multi-client systems at Skypass System, along with internal automations and Linux server security.",
+      "Development of enterprise modules for multi-client systems at Skypass System, along with internal automations and Linux server security.",
     highlightsEn: [
       "Zero-to-production Service Order system: relational DB modeling (MySQL/Oracle), PHP backend, UI, and live deploy",
       "Automated billing alert module: queries ticket sales/cancellations and dispatches automated emails via Nodemailer",

@@ -138,10 +138,10 @@ export default function Whoami({ locale }: { locale: string }) {
 
             <div className="border border-outline-variant/50 bg-surface-container-lowest p-3 transition-colors hover:border-primary-container/40">
               <span className="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">
-                TCC Eng. Software
+                Formação Acadêmica
               </span>
               <p className="mt-1 font-bold text-secondary-fixed-dim">
-                Nota 9.3 (Fullstack)
+                Tecnólogo ADS (Formado)
               </p>
             </div>
           </div>

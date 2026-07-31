@@ -33,7 +33,7 @@
     "seed": {
       "whoamiCmd": "whoami",
       "introCmd": "cat intro.txt",
-      "introText": "Desenvolvedor Backend/Fullstack com experiência em sistemas corporativos multi-empresa, banco de dados, infraestrutura Linux e automação em produção.",
+      "introText": "Desenvolvedor Backend/Fullstack com experiência em desenvolvimento de APIs, bancos de dados relacionais e infraestrutura Linux.",
       "stackLabel": "Stack"
     }
   },
@@ -82,26 +82,26 @@
   "whoami": {
     "title": "whoami",
     "heading": "Desenvolvedor Backend / Fullstack com atuação prática em produção.",
-    "intro": "Desenvolvo, evoluo e sustento sistemas corporativos multi-empresa. Minha atuação vai desde a modelagem de banco de dados (MySQL, Oracle, PostgreSQL, SQLite), backend (PHP, Node.js, NestJS) e aplicações (Next.js, React, React Native, Angular) até a infraestrutura Linux, deploys via SSH, automações internas e fluxo de desenvolvimento com Agentes de IA.",
-    "tagline": "Do banco de dados e backend ao deploy e monitoramento em ambientes Linux.",
-    "production": "Experiência sólida na linha de frente em produção: investigo incidentes de segurança, analiso logs, otimizo consultas SQL e crio automações (Python/JS). Acredito na entrega de código confiável com acompanhamento de ponta a ponta.",
+    "intro": "Desenvolvo e mantenho aplicações e sistemas corporativos. Minha atuação abrange modelagem de banco de dados (MySQL, Oracle, PostgreSQL), backend (Node.js, NestJS, PHP) e frontend/mobile (Next.js, React, React Native, Angular), além de infraestrutura Linux e deploys via SSH.",
+    "tagline": "Do banco de dados e backend ao deploy em ambientes Linux.",
+    "production": "Experiência prática na linha de frente em produção: investigo incidentes de segurança, analiso logs, otimizo consultas SQL e crio automações (Python/JS). Acredito na entrega de código confiável com acompanhamento de ponta a ponta.",
     "quotes": [
       "Desenvolvedor Backend / Fullstack.",
-      "Sustentação, evolução de sistemas e automação em produção.",
-      "Da modelagem relacional ao deploy e segurança em servidores Linux."
+      "Desenvolvimento de APIs RESTful e aplicações web/mobile.",
+      "Modelagem de bancos de dados, infraestrutura Linux e deploys em produção."
     ],
     "config": {
       "section": "[identity]",
       "nameKey": "name",
       "roleKey": "role",
       "focusKey": "focus",
-      "focusValue": "backend, sustentação em produção e automações",
+      "focusValue": "backend, APIs e infraestrutura Linux",
       "taglineKey": "tagline"
     },
     "diff": {
       "header": "@@ ownership.patch @@",
-      "minus": "apenas implementar o código e não acompanhar a execução em produção",
-      "plus": "modelar o banco, desenvolver backend/frontend, automatizar rotinas e garantir resiliência em produção"
+      "minus": "apenas escrever código sem acompanhar a aplicação em produção",
+      "plus": "modelar o banco, implementar backend/frontend e garantir estabilidade e deploy em produção"
     }
   },
   "projects": {

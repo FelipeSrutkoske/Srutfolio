@@ -28,6 +28,7 @@ function ProjectCard({ project, locale }: { project: Project; locale: string }) 
   const title = pick(locale, project.title, project.titleEn);
   const summary = pick(locale, project.summary, project.summaryEn);
   const highlights = pick(locale, project.highlights, project.highlightsEn);
+  const statusNote = pick(locale, project.statusNote, project.statusNoteEn);
 
   const hasLinks = Boolean(
     project.links.repo || project.links.demo || project.links.paper,
@@ -36,8 +37,8 @@ function ProjectCard({ project, locale }: { project: Project; locale: string }) 
   return (
     <WindowFrame
       path={`~/portfolio/projects/${project.id}${EXT_BY_ID[project.id] ?? ".ts"}`}
-      className="flex h-full flex-col transition-[border-color,transform] duration-150 hover:border-primary-container focus-within:border-tertiary-fixed-dim motion-safe:hover:-translate-y-0.5"
-      bodyClassName="flex flex-1 flex-col gap-4 p-4"
+      className="row-span-5 grid grid-rows-subgrid transition-[border-color,transform] duration-150 hover:border-primary-container focus-within:border-tertiary-fixed-dim motion-safe:hover:-translate-y-0.5"
+      bodyClassName="row-span-5 grid grid-rows-subgrid gap-4 p-4 md:p-6"
     >
       <h3 className="text-body-lg font-bold leading-snug text-on-surface">
         <span className="text-primary-container"># </span>
@@ -46,13 +47,13 @@ function ProjectCard({ project, locale }: { project: Project; locale: string }) 
 
       <p className="text-code-sm text-on-surface-variant">{summary}</p>
 
-      <div className="flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap content-start gap-1.5">
         {project.stack.map((tech) => (
           <Chip key={tech}>{tech}</Chip>
         ))}
       </div>
 
-      <div className="mt-auto">
+      <div className="flex flex-col justify-start">
         <p className="text-label-caps font-bold uppercase text-secondary-fixed-dim">
           {t("changelog")}
         </p>
@@ -86,7 +87,7 @@ function ProjectCard({ project, locale }: { project: Project; locale: string }) 
         ) : null}
         {!hasLinks ? (
           <span className="text-code-sm text-on-surface-variant">
-            {t("privateNote")}
+            [ {statusNote ?? t("privateNote")} ]
           </span>
         ) : null}
       </div>
@@ -100,7 +101,7 @@ export default function Projects({ locale }: { locale: string }) {
   return (
     <section id="projects" className="scroll-mt-20">
       <SectionHeading title={t("title")} description={t("description")} />
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} locale={locale} />
         ))}

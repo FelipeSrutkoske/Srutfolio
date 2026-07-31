@@ -29,11 +29,11 @@
   },
   "hero": {
     "windowPath": "felipesrutkoske@portfolio: ~",
-    "hint": "tip: type \"help\" to list the commands — or tap a chip",
+    "hint": "hint: type \"help\" to list available commands — or tap a chip",
     "seed": {
       "whoamiCmd": "whoami",
       "introCmd": "cat intro.txt",
-      "introText": "Backend/Fullstack Developer with experience in multi-client enterprise systems, relational databases, Linux infra, and production automation.",
+      "introText": "Backend/Fullstack Developer experienced in API development, relational databases, and Linux infrastructure.",
       "stackLabel": "Stack"
     }
   },
@@ -41,8 +41,8 @@
     "prompt": "$ ",
     "placeholder": "type a command...",
     "ariaInput": "Interactive terminal. Type a command and press Enter.",
-    "helpAria": "Show or hide the command list",
-    "tapLabel": "$ run command:",
+    "helpAria": "Show or hide available command list",
+    "tapLabel": "$ execute command:",
     "commands": {
       "whoami": "whoami",
       "projects": "projects",
@@ -56,8 +56,8 @@
     },
     "helpText": "Available commands:",
     "notFound": "command not found",
-    "unknown": "type \"help\" to see the command list.",
-    "sudo": "permission denied: nice try. root is reserved for whoever buys the coffee.",
+    "unknown": "type \"help\" to view available commands.",
+    "sudo": "permission denied: nice try. root is reserved for coffee buyers.",
     "navigating": "→ navigating to #{section}",
     "candidates": "matches:",
     "output": {
@@ -68,40 +68,40 @@
       "contactOpen": "[ok] contact channels open"
     },
     "commandHelp": {
-      "whoami": "Shows my narrative and what sets me apart.",
-      "projects": "Lists the selected projects.",
-      "skills": "Displays the skills matrix.",
+      "whoami": "Shows the narrative and core background.",
+      "projects": "Lists selected projects.",
+      "skills": "Displays the skill matrix.",
       "experience": "Shows the experience timeline.",
-      "contact": "Opens the contact links.",
-      "cv": "Downloads the resume PDF file.",
+      "contact": "Opens contact links.",
+      "cv": "Downloads resume in PDF format (Curriculo_Felipe-Srutkoske.pdf).",
       "help": "Lists all available commands.",
-      "clear": "Clears the terminal history.",
-      "sudo": "Tries to escalate privileges. Good luck."
+      "clear": "Clears terminal output history.",
+      "sudo": "Attempts privilege escalation. Good luck."
     }
   },
   "whoami": {
     "title": "whoami",
     "heading": "Backend / Fullstack Developer with hands-on production experience.",
-    "intro": "I build, evolve, and maintain multi-tenant enterprise systems. My domain spans relational database modeling (MySQL, Oracle, PostgreSQL, SQLite), backend development (PHP, Node.js, NestJS), application interfaces (Next.js, React, React Native, Angular), Linux infrastructure, SSH deployments, internal scripts, and AI agent-assisted workflows.",
-    "tagline": "From database & backend logic to deployment and monitoring on Linux servers.",
-    "production": "Hands-on experience on the production front line: investigating security incidents, reading logs, optimizing SQL queries, and automating tasks (Python/JS). I focus on delivering resilient code with end-to-end ownership.",
+    "intro": "I build and maintain applications and enterprise systems. My stack spans database modeling (MySQL, Oracle, PostgreSQL), backend (Node.js, NestJS, PHP), frontend/mobile (Next.js, React, React Native, Angular), and Linux infrastructure with SSH deployments.",
+    "tagline": "From databases and backend APIs to Linux deployments.",
+    "production": "Hands-on experience in production environments: investigating security incidents, log analysis, SQL query optimization, and automation scripts (Python/JS).",
     "quotes": [
       "Backend / Fullstack Developer.",
-      "Production support, system evolution & automation.",
-      "From relational data modeling to Linux server deployment & security."
+      "Development of RESTful APIs and web/mobile applications.",
+      "Database modeling, Linux infrastructure, and production deployments."
     ],
     "config": {
       "section": "[identity]",
       "nameKey": "name",
       "roleKey": "role",
       "focusKey": "focus",
-      "focusValue": "backend, production support & automation",
+      "focusValue": "backend, APIs, and Linux infrastructure",
       "taglineKey": "tagline"
     },
     "diff": {
       "header": "@@ ownership.patch @@",
-      "minus": "write code and ignore how it executes in production",
-      "plus": "model databases, build backend/frontend, automate tasks, and ensure live system resilience"
+      "minus": "just writing code without following production lifecycle",
+      "plus": "database modeling, backend/frontend implementation, stability and production deployment"
     }
   },
   "projects": {

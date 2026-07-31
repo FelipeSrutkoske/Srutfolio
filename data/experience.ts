@@ -49,7 +49,7 @@ export const experiences: Experience[] = [
     company: "Centro Universitário Integrado",
     period: "Concluído",
     summary:
-      "Formação acadêmica concluída com foco em desenvolvimento de software, arquitetura de sistemas, banco de dados e testes. Projeto de conclusão de curso (TCC) aprovado com nota 9.3.",
+      "Formação acadêmica em Análise e Desenvolvimento de Sistemas, abrangendo engenharia de software, arquitetura de sistemas, bancos de dados e desenvolvimento de aplicações.",
     stack: [
       "NestJS",
       "Next.js",
@@ -62,6 +62,6 @@ export const experiences: Experience[] = [
     companyEn: "Centro Universitário Integrado",
     periodEn: "Completed",
     summaryEn:
-      "Completed degree focused on software engineering, system architecture, database modeling, and testing. Graduation thesis (TCC) awarded a 9.3/10 grade.",
+      "Graduated with a degree in Systems Analysis and Development, covering software engineering, system architecture, database modeling, and application testing.",
   },
 ];
