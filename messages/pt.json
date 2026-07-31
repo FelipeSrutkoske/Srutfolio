@@ -73,7 +73,7 @@
       "skills": "Exibe a matriz de habilidades.",
       "experience": "Mostra a timeline de experiência.",
       "contact": "Abre os links de contato.",
-      "cv": "Baixa o currículo em PDF (Curriculo_Felipe-Srutkoske.pdf).",
+      "cv": "Baixa o currículo em PDF (Curriculo-Felipe_Srutkoske.pdf).",
       "help": "Lista todos os comandos disponíveis.",
       "clear": "Limpa o histórico do terminal.",
       "sudo": "Tenta elevar privilégios. Boa sorte."

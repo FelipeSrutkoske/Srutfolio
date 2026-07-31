@@ -87,8 +87,8 @@ export default function TopNav() {
           {/* Desktop right items */}
           <div className="hidden shrink-0 items-center gap-3 md:flex">
             <a
-              href="/Curriculo_Felipe-Srutkoske.pdf"
-              download="Curriculo_Felipe-Srutkoske.pdf"
+              href="/Curriculo-Felipe_Srutkoske.pdf"
+              download="Curriculo-Felipe_Srutkoske.pdf"
               target="_blank"
               rel="noreferrer"
               className="border border-primary-container/40 bg-surface-container/80 px-2.5 py-1 text-code-sm font-medium text-primary-container transition-all hover:border-primary-container hover:bg-primary-container/10 active:scale-95"
@@ -179,8 +179,8 @@ export default function TopNav() {
 
               <div className="flex flex-col gap-3 pt-1">
                 <a
-                  href="/Curriculo_Felipe-Srutkoske.pdf"
-                  download="Curriculo_Felipe-Srutkoske.pdf"
+                  href="/Curriculo-Felipe_Srutkoske.pdf"
+                  download="Curriculo-Felipe_Srutkoske.pdf"
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setIsOpen(false)}

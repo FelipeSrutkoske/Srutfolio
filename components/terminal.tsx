@@ -224,15 +224,15 @@ export default function Terminal() {
         case "cv": {
           if (typeof window !== "undefined") {
             const link = document.createElement("a");
-            link.href = "/Curriculo_Felipe-Srutkoske.pdf";
-            link.download = "Curriculo_Felipe-Srutkoske.pdf";
+            link.href = "/Curriculo-Felipe_Srutkoske.pdf";
+            link.download = "Curriculo-Felipe_Srutkoske.pdf";
             link.target = "_blank";
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
           }
           return [
-            textLine("[ok] baixando Curriculo_Felipe-Srutkoske.pdf...", "green"),
+            textLine("[ok] baixando Curriculo-Felipe_Srutkoske.pdf...", "green"),
             textLine("→ arquivo salvo ou aberto no seu navegador.", "cyan"),
           ];
         }

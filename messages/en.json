@@ -73,7 +73,7 @@
       "skills": "Displays the skill matrix.",
       "experience": "Shows the experience timeline.",
       "contact": "Opens contact links.",
-      "cv": "Downloads resume in PDF format (Curriculo_Felipe-Srutkoske.pdf).",
+      "cv": "Downloads resume in PDF format (Curriculo-Felipe_Srutkoske.pdf).",
       "help": "Lists all available commands.",
       "clear": "Clears terminal output history.",
       "sudo": "Attempts privilege escalation. Good luck."
