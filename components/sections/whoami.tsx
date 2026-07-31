@@ -34,7 +34,7 @@ export default function Whoami({ locale }: { locale: string }) {
           {t("heading")}
         </h3>
 
-        <p className="mt-4 max-w-3xl text-body-md text-on-surface-variant">
+        <p className="mt-4 text-body-md text-on-surface-variant">
           {t("intro")}
         </p>
 
@@ -147,7 +147,7 @@ export default function Whoami({ locale }: { locale: string }) {
           </div>
         </div>
 
-        <p className="mt-6 max-w-3xl text-body-md text-on-surface-variant">
+        <p className="mt-6 text-body-md text-on-surface-variant">
           {t("production")}
         </p>
       </WindowFrame>
