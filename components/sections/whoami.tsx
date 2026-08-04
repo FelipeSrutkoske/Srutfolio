@@ -103,45 +103,45 @@ export default function Whoami({ locale }: { locale: string }) {
           <div className="flex items-center justify-between gap-4 border-b border-outline-variant/60 pb-2.5">
             <p className="flex items-center gap-2 font-bold text-primary-container">
               <span className="inline-block h-2 w-2 rounded-full bg-primary-container animate-pulse" />
-              STATUS: SYSTEM_ONLINE & READY
+              {t("status.system")}
             </p>
-            <span className="text-code-xs font-mono text-on-surface-variant">env: production</span>
+            <span className="text-code-xs font-mono text-on-surface-variant">{t("status.env")}</span>
           </div>
 
           <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <div className="border border-outline-variant/50 bg-surface-container-lowest p-3 transition-colors hover:border-primary-container/40">
               <span className="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">
-                Atuação Principal
+                {t("status.mainRoleLabel")}
               </span>
               <p className="mt-1 font-bold text-secondary-fixed-dim">
-                Backend & Sustentação
+                {t("status.mainRoleValue")}
               </p>
             </div>
 
             <div className="border border-outline-variant/50 bg-surface-container-lowest p-3 transition-colors hover:border-primary-container/40">
               <span className="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">
-                Bancos de Dados
+                {t("status.databasesLabel")}
               </span>
               <p className="mt-1 font-bold text-tertiary-fixed-dim">
-                MySQL • Oracle • Postgres
+                {t("status.databasesValue")}
               </p>
             </div>
 
             <div className="border border-outline-variant/50 bg-surface-container-lowest p-3 transition-colors hover:border-primary-container/40">
               <span className="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">
-                Deploy & Ambientes
+                {t("status.deployLabel")}
               </span>
               <p className="mt-1 font-bold text-primary-container">
-                Linux / SSH • Docker
+                {t("status.deployValue")}
               </p>
             </div>
 
             <div className="border border-outline-variant/50 bg-surface-container-lowest p-3 transition-colors hover:border-primary-container/40">
               <span className="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">
-                Formação Acadêmica
+                {t("status.educationLabel")}
               </span>
               <p className="mt-1 font-bold text-secondary-fixed-dim">
-                Tecnólogo ADS (Formado)
+                {t("status.educationValue")}
               </p>
             </div>
           </div>

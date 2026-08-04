@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
   const path = locale === routing.defaultLocale ? "/" : `/${locale}`;
 
   return {
-    metadataBase: new URL("https://example.com"),
+    metadataBase: new URL("https://felipesrutkoske.dev"),
     title: {
       default: t("title"),
       template: `%s | ${t("title")}`,

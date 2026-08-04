@@ -177,7 +177,7 @@ export const projects: Project[] = [
       "Ordem de Serviço criada do zero: modelagem de banco relacional (MySQL/Oracle), backend PHP, telas e deploy",
       "Módulo automatizado de alertas de faturamento: consulta vendas/cancelamentos de passagens e dispara e-mails via Nodemailer",
       "Automações internas: scripts em Python para monitoramento de disco via SSH e JS para conferência de importação entre clientes",
-      "Segurança: diagnóstico e mitigação de comprometimento de servidor Linux (shell remoto e mineração de criptomoedas)",
+      "Segurança: diagnóstico e mitigação de comprometimento de servidor Linux e incidentes em produção",
     ],
     links: {},
     statusNote: "código privado",
@@ -189,7 +189,7 @@ export const projects: Project[] = [
       "Zero-to-production Service Order system: relational DB modeling (MySQL/Oracle), PHP backend, UI, and live deploy",
       "Automated billing alert module: queries ticket sales/cancellations and dispatches automated emails via Nodemailer",
       "Internal automations: Python VM disk space monitoring via SSH and JavaScript customer database import cross-check",
-      "Security: investigation and mitigation of Linux server compromise (remote shell & crypto-mining)",
+      "Security: investigation and mitigation of Linux server compromise and production incidents",
     ],
   },
 ];

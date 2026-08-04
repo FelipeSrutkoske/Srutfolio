@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Portfolio — Fullstack Developer",
-    "description": "Portfolio of a fullstack developer: who I am, projects, skills, experience, and contact."
+    "title": "Felipe Srutkoske — System Analyst / Fullstack Developer",
+    "description": "Portfolio of a system analyst / fullstack developer: who I am, projects, skills, experience, and contact."
   },
   "brand": "felipesrutkoske@dev",
   "skip": "Skip to content",
@@ -81,12 +81,12 @@
   },
   "whoami": {
     "title": "whoami",
-    "heading": "Backend / Fullstack Developer with hands-on production experience.",
+    "heading": "System Analyst / Fullstack Developer with production experience.",
     "intro": "I build and maintain applications and enterprise systems. My stack spans database modeling (MySQL, Oracle, PostgreSQL), backend (Node.js, NestJS, PHP), frontend/mobile (Next.js, React, React Native, Angular), and Linux infrastructure with SSH deployments.",
     "tagline": "From databases and backend APIs to Linux deployments.",
-    "production": "Hands-on experience in production environments: investigating security incidents, log analysis, SQL query optimization, and automation scripts (Python/JS).",
+    "production": "Experience in production environments: investigating security incidents, log analysis, SQL query optimization, and automation scripts (Python/JS).",
     "quotes": [
-      "Backend / Fullstack Developer.",
+      "System Analyst / Fullstack Developer.",
       "Development of RESTful APIs and web/mobile applications.",
       "Database modeling, Linux infrastructure, and production deployments."
     ],
@@ -102,6 +102,18 @@
       "header": "@@ ownership.patch @@",
       "minus": "just writing code without following production lifecycle",
       "plus": "database modeling, backend/frontend implementation, stability and production deployment"
+    },
+    "status": {
+      "system": "STATUS: SYSTEM_ONLINE & READY",
+      "env": "env: production",
+      "mainRoleLabel": "Main Focus",
+      "mainRoleValue": "Backend & Support",
+      "databasesLabel": "Databases",
+      "databasesValue": "MySQL • Oracle • Postgres",
+      "deployLabel": "Deploy & Environments",
+      "deployValue": "Linux / SSH • Docker",
+      "educationLabel": "Education",
+      "educationValue": "Software Dev Degree"
     }
   },
   "projects": {

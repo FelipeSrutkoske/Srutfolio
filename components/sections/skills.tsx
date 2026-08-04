@@ -26,6 +26,8 @@ export default function Skills({ locale }: { locale: string }) {
   const t = useTranslations("skills");
   const total = skills.reduce((acc, category) => acc + category.items.length, 0);
 
+  let pidCounter = 18420;
+
   return (
     <section id="skills" className="scroll-mt-20">
       <SectionHeading title={t("title")} description={t("description")} />
@@ -42,10 +44,10 @@ export default function Skills({ locale }: { locale: string }) {
         </div>
 
         {/* Header row */}
-        <div className="grid grid-cols-[1fr_7.5rem] gap-2 px-2 py-1 text-label-caps font-bold uppercase text-on-surface-variant sm:grid-cols-[3.5rem_1fr_3.5rem_7.5rem_4.5rem]">
+        <div className="grid grid-cols-[1fr_3rem_6.5rem] gap-2 px-2 py-1 text-label-caps font-bold uppercase text-on-surface-variant sm:grid-cols-[4rem_1fr_3.5rem_7.5rem_4.5rem]">
           <span className="hidden sm:inline">{t("headers.pid")}</span>
           <span>{t("headers.process")}</span>
-          <span className="hidden sm:inline">{t("headers.cpu")}</span>
+          <span className="text-right sm:text-left">{t("headers.cpu")}</span>
           <span>{t("headers.bar")}</span>
           <span className="hidden sm:inline">{t("headers.status")}</span>
         </div>
@@ -56,19 +58,20 @@ export default function Skills({ locale }: { locale: string }) {
               {"## "}
               {pick(locale, category.category, category.categoryEn)}
             </p>
-            {category.items.map((item, itemIdx) => {
+            {category.items.map((item) => {
+              const pid = pidCounter++;
               const level = item.level;
               const colorClass = getSkillColorClass(level);
               return (
                 <div
                   key={item.name}
-                  className="grid grid-cols-[1fr_7.5rem] items-baseline gap-2 border-b border-outline-variant/40 px-2 py-1 text-code-sm transition-colors hover:bg-surface-container sm:grid-cols-[3.5rem_1fr_3.5rem_7.5rem_4.5rem]"
+                  className="grid grid-cols-[1fr_3rem_6.5rem] items-baseline gap-2 border-b border-outline-variant/40 px-2 py-1 text-code-sm transition-colors hover:bg-surface-container sm:grid-cols-[4rem_1fr_3.5rem_7.5rem_4.5rem]"
                 >
                   <span className="hidden text-on-surface-variant sm:inline">
-                    {String(1200 + itemIdx * 7 + item.name.length).padStart(4, "0")}
+                    {pid}
                   </span>
-                  <span className="text-on-surface">{item.name}</span>
-                  <span className={`hidden sm:inline ${colorClass}`}>
+                  <span className="truncate text-on-surface">{item.name}</span>
+                  <span className={`text-right sm:text-left ${colorClass}`}>
                     {level}%
                   </span>
                   <span aria-hidden="true" className={colorClass}>

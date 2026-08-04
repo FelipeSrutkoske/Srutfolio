@@ -1,6 +1,6 @@
 import { routing } from "@/i18n";
 
-const BASE_URL = "https://example.com";
+const BASE_URL = "https://felipesrutkoske.dev";
 
 export default function sitemap() {
   return routing.locales.map((locale) => {

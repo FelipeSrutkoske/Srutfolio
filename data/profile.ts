@@ -27,15 +27,15 @@ export interface Profile {
 
 export const profile: Profile = {
   name: "Felipe Srutkoske",
-  role: "Desenvolvedor Backend / Fullstack",
+  role: "Analista de Sistemas / Desenvolvedor Fullstack",
   tagline:
-    "Desenvolvedor Backend/Fullstack focado em desenvolvimento de arquiteturas escaláveis.",
+    "Analista de Sistemas / Desenvolvedor Fullstack focado em desenvolvimento de arquiteturas escaláveis.",
   email: "srutkoske.felipe@gmail.com",
   githubUrl: "https://github.com/FelipeSrutkoske",
   linkedinUrl: "https://www.linkedin.com/in/felipesrutkoske",
   phone: "(44) 99919-7987",
   location: "Campo Mourão - PR",
-  roleEn: "Backend / Fullstack Developer",
+  roleEn: "System Analyst / Fullstack Developer",
   taglineEn:
-    "Backend/Fullstack Developer focused on scalable architecture development.",
+    "System Analyst / Fullstack Developer focused on scalable architecture development.",
 };

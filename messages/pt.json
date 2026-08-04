@@ -81,12 +81,12 @@
   },
   "whoami": {
     "title": "whoami",
-    "heading": "Desenvolvedor Backend / Fullstack com atuação prática em produção.",
+    "heading": "Analista de Sistemas / Desenvolvedor Fullstack com experiência em produção.",
     "intro": "Desenvolvo e mantenho aplicações e sistemas corporativos. Minha atuação abrange modelagem de banco de dados (MySQL, Oracle, PostgreSQL), backend (Node.js, NestJS, PHP) e frontend/mobile (Next.js, React, React Native, Angular), além de infraestrutura Linux e deploys via SSH.",
     "tagline": "Do banco de dados e backend ao deploy em ambientes Linux.",
     "production": "Desenvolvedor focado em resolver problemas reais. Atuo na implementação de funcionalidades, investigação de incidentes, modelagem de bancos de dados e automação de processos em sistemas utilizados diariamente por empresas.",
     "quotes": [
-      "Desenvolvedor Backend / Fullstack.",
+      "Analista de Sistemas / Desenvolvedor Fullstack.",
       "Desenvolvimento de APIs RESTful e aplicações web/mobile.",
       "Modelagem de bancos de dados, infraestrutura Linux e deploys em produção."
     ],
@@ -95,13 +95,25 @@
       "nameKey": "name",
       "roleKey": "role",
       "focusKey": "focus",
-      "focusValue": "backend, APIs e infraestrutura Linux",
+      "focusValue": "sistemas corporativos, APIs e infraestrutura Linux",
       "taglineKey": "tagline"
     },
     "diff": {
       "header": "@@ ownership.patch @@",
       "minus": "apenas escrever código sem acompanhar a aplicação em produção",
       "plus": "modelar o banco, implementar backend/frontend e garantir estabilidade e deploy em produção"
+    },
+    "status": {
+      "system": "STATUS: SYSTEM_ONLINE & READY",
+      "env": "env: production",
+      "mainRoleLabel": "Atuação Principal",
+      "mainRoleValue": "Sistemas Corporativos & Sustentação",
+      "databasesLabel": "Bancos de Dados",
+      "databasesValue": "MySQL • Oracle • Postgres",
+      "deployLabel": "Deploy & Ambientes",
+      "deployValue": "Linux / SSH • Docker",
+      "educationLabel": "Formação Acadêmica",
+      "educationValue": "Tecnólogo ADS (Formado)"
     }
   },
   "projects": {
