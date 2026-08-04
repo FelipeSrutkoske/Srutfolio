@@ -57,7 +57,7 @@ export function SectionHeading({
         {title}
       </h2>
       {description ? (
-        <p className="mt-2 max-w-2xl text-body-md text-on-surface-variant">
+        <p className="mt-2 text-body-md text-on-surface-variant">
           {description}
         </p>
       ) : null}

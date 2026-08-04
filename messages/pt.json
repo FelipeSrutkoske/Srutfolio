@@ -158,7 +158,7 @@
   "contact": {
     "title": "contact",
     "heading": "Vamos conversar",
-    "description": "Aberto a oportunidades, caso deseje entrar em contato, abaixo estão meus meios de contato.",
+    "description": "Aberto a oportunidades, abaixo estão meus canais de contato.",
     "windowPath": "~/portfolio/contact.log",
     "cmd": "./contact.sh --open-channels",
     "ok": "[OK]",

@@ -116,7 +116,7 @@ export default function Experience({ locale }: { locale: string }) {
                   </div>
                   <div data-tline="" className="flex gap-2">
                     <Glyph />
-                    <p className="max-w-2xl text-on-surface-variant">
+                    <p className="flex-1 text-on-surface-variant">
                       {summary}
                     </p>
                   </div>

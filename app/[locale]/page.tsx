@@ -36,7 +36,7 @@ export default async function HomePage({ params }: HomePageProps) {
 
       <TopNav />
 
-      <main className="mx-auto max-w-container-max px-4 md:px-6">
+      <main className="mx-auto max-w-container-max px-4 pb-16 md:px-6 md:pb-24">
         <Hero locale={locale} />
 
         <div className="space-y-16 md:space-y-24">

@@ -472,7 +472,7 @@ export default function Terminal() {
               onKeyDown={onKeyDown}
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
-              maxLength={64}
+              maxLength={256}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"
