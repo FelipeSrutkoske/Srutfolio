@@ -118,8 +118,8 @@
   },
   "projects": {
     "title": "projects",
-    "heading": "Projetos selecionados",
-    "description": "Três casos que mostram profundidade técnica, iniciativa e impacto real.",
+    "heading": "Principais projetos",
+    "description": "Principais projetos que desenvolvi em minha trajetória profissional.",
     "changelog": "### changelog",
     "flags": {
       "repo": "--view-repo",
@@ -131,7 +131,7 @@
   "skills": {
     "title": "skills",
     "heading": "Matriz de habilidades",
-    "description": "Stack organizada por camada. Adicione ou remova itens editando data/skills.ts.",
+    "description": "Stack: ferramentas e tecnologias que utilizo no desenvolvimento.",
     "windowPath": "htop --sort-by=category",
     "tasks": "Tasks: {count} total, {count} running",
     "load": "Load average: 0.42 0.24 0.13",
@@ -147,7 +147,7 @@
   "experience": {
     "title": "experience",
     "heading": "Timeline de experiência",
-    "description": "Caminho de profundidade: de operações de produção a entregas fullstack.",
+    "description": "Minha trajetória profissional: de operações de produção a desenvolvimento fullstack.",
     "windowPath": "~/portfolio/experience.git",
     "cmd": "git log --graph --all --decorate",
     "author": "Author:",
@@ -158,7 +158,7 @@
   "contact": {
     "title": "contact",
     "heading": "Vamos conversar",
-    "description": "Aberto a oportunidades, freelas e troca de ideias.",
+    "description": "Aberto a oportunidades, caso deseje entrar em contato, abaixo estão meus meios de contato.",
     "windowPath": "~/portfolio/contact.log",
     "cmd": "./contact.sh --open-channels",
     "ok": "[OK]",
