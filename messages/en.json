@@ -77,6 +77,22 @@
       "help": "Lists all available commands.",
       "clear": "Clears terminal output history.",
       "sudo": "Attempts privilege escalation. Good luck."
+    },
+    "profile": {
+      "name": "Felipe Srutkoske",
+      "role": "System Analyst / Fullstack Developer",
+      "location": "Campo Mourão - PR",
+      "focus": "APIs, corporate systems & Linux infra",
+      "stack": "Node.js, Next.js, React, NestJS, PostgreSQL",
+      "status": "available for opportunities",
+      "labels": {
+        "name": "name",
+        "role": "role",
+        "location": "location",
+        "focus": "focus",
+        "stack": "stack",
+        "status": "status"
+      }
     }
   },
   "whoami": {
@@ -86,9 +102,7 @@
     "tagline": "From databases and backend APIs to Linux deployments.",
     "production": "Experience in production environments: investigating security incidents, log analysis, SQL query optimization, and automation scripts (Python/JS).",
     "quotes": [
-      "System Analyst / Fullstack Developer.",
-      "Development of RESTful APIs and web/mobile applications.",
-      "Database modeling, Linux infrastructure, and production deployments."
+      "System Analyst / Fullstack Developer."
     ],
     "config": {
       "section": "[identity]",

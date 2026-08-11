@@ -156,7 +156,7 @@ export default function TopNav() {
           <div className="relative border-b border-outline-variant bg-surface-container-lowest/98 p-5 shadow-2xl backdrop-blur-md">
             <nav aria-label={t("nav.aria")} className="flex flex-col gap-2">
               <div className="mb-1 border-b border-outline-variant/40 pb-2 text-[11px] font-mono uppercase tracking-wider text-on-surface-variant">
-                // navigation
+                {"// navigation"}
               </div>
               {SECTIONS.map((id) => (
                 <a

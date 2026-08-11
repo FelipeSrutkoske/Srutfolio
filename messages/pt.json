@@ -77,6 +77,22 @@
       "help": "Lista todos os comandos disponíveis.",
       "clear": "Limpa o histórico do terminal.",
       "sudo": "Tenta elevar privilégios. Boa sorte."
+    },
+    "profile": {
+      "name": "Felipe Srutkoske",
+      "role": "Analista de Sistemas / Desenvolvedor Fullstack",
+      "location": "Campo Mourão - PR",
+      "focus": "APIs, sistemas corporativos e infra Linux",
+      "stack": "Node.js, Next.js, React, NestJS, PostgreSQL",
+      "status": "disponível para conexões",
+      "labels": {
+        "name": "name",
+        "role": "role",
+        "location": "location",
+        "focus": "focus",
+        "stack": "stack",
+        "status": "status"
+      }
     }
   },
   "whoami": {
@@ -86,9 +102,7 @@
     "tagline": "Do banco de dados e backend ao deploy em ambientes Linux.",
     "production": "Desenvolvedor focado em resolver problemas reais. Atuo na implementação de funcionalidades, investigação de incidentes, modelagem de bancos de dados e automação de processos em sistemas utilizados diariamente por empresas.",
     "quotes": [
-      "Analista de Sistemas / Desenvolvedor Fullstack.",
-      "Desenvolvimento de APIs RESTful e aplicações web/mobile.",
-      "Modelagem de bancos de dados, infraestrutura Linux e deploys em produção."
+      "Analista de Sistemas / Desenvolvedor Fullstack."
     ],
     "config": {
       "section": "[identity]",

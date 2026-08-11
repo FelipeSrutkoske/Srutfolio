@@ -9,6 +9,7 @@ import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { skills } from "@/data/skills";
 import { useTypeOnView } from "@/hooks/use-type-on-view";
+import { WhoamiProfileOutput } from "./ascii-portrait";
 import { Prompt } from "./ui";
 
 type Tone = "default" | "dim" | "green" | "amber" | "cyan" | "red";
@@ -17,7 +18,8 @@ type Seg = { text: string; tone?: Tone; href?: string };
 type OutLine = { segments: Seg[] };
 type Entry =
   | { id: number; kind: "cmd"; text: string }
-  | { id: number; kind: "out"; lines: OutLine[] };
+  | { id: number; kind: "out"; lines: OutLine[] }
+  | { id: number; kind: "profile" };
 
 export const COMMANDS = [
   "whoami",
@@ -34,7 +36,6 @@ export const COMMANDS = [
 type Command = (typeof COMMANDS)[number];
 
 const SECTION_COMMANDS: readonly string[] = [
-  "whoami",
   "projects",
   "skills",
   "experience",
@@ -233,7 +234,7 @@ export default function Terminal() {
           }
           return [
             textLine("[ok] baixando Curriculo-Felipe_Srutkoske.pdf...", "green"),
-            textLine("→ arquivo salvo ou aberto no seu navegador.", "cyan"),
+            textLine("→ arquivo salvo em seu navegador.", "cyan"),
           ];
         }
         case "help":
@@ -275,6 +276,12 @@ export default function Terminal() {
 
       if (command === "clear") {
         setEntries([]);
+        return;
+      }
+
+      if (command === "whoami") {
+        const profileEntry: Entry = { id: ++idRef.current, kind: "profile" };
+        setEntries([echo, profileEntry]);
         return;
       }
 
@@ -400,24 +407,31 @@ export default function Terminal() {
         onClick={() => inputRef.current?.focus()}
         className="max-h-[58vh] min-h-[320px] cursor-text space-y-1 overflow-y-auto text-code-sm md:max-h-[480px] md:min-h-[420px] md:text-body-md"
       >
-        {entries.map((entry) =>
-          entry.kind === "cmd" ? (
-            // Seed entries (ids < 100) print via the scroll-triggered reveal;
-            // anything the user typed keeps the instant term-line animation.
-            <div
-              key={entry.id}
-              {...(entry.id < 100 ? { "data-tline": "" } : {})}
-              className={entry.id < 100 ? "pt-2" : "term-line pt-2"}
-            >
-              <Prompt />
-              <span className="text-on-surface">{entry.text}</span>
-            </div>
-          ) : (
+        {entries.map((entry) => {
+          if (entry.kind === "cmd") {
+            return (
+              <div
+                key={entry.id}
+                {...(entry.id < 100 ? { "data-tline": "" } : {})}
+                className={entry.id < 100 ? "pt-2" : "term-line pt-2"}
+              >
+                <Prompt />
+                <span className="text-on-surface">{entry.text}</span>
+              </div>
+            );
+          }
+          if (entry.kind === "profile") {
+            return (
+              <div key={entry.id} className="term-line pb-1">
+                <WhoamiProfileOutput />
+              </div>
+            );
+          }
+          return (
             <div key={entry.id} className="pb-1">
               {entry.lines.map((outLine, lineIdx) => (
                 <div
                   key={lineIdx}
-                  {...(entry.id < 100 ? { "data-tline": "" } : {})}
                   className={
                     entry.id < 100
                       ? "whitespace-pre-wrap break-words py-0.5"
@@ -454,9 +468,8 @@ export default function Terminal() {
                 </div>
               ))}
             </div>
-          ),
-        )}
-
+          );
+        })}
         {/* Active prompt — desktop only (mobile uses the chips below). */}
         <div className="hidden items-baseline pt-2 md:flex">
           <label htmlFor="terminal-input" className="sr-only">

@@ -32,7 +32,6 @@ export const skills: SkillCategory[] = [
       { name: "PHP", level: 81 },
       { name: "TypeScript", level: 77 },
       { name: "JavaScript", level: 88 },
-      { name: "C", level: 71 },
     ],
   },
   {
