@@ -33,7 +33,7 @@
     "seed": {
       "whoamiCmd": "whoami",
       "introCmd": "cat intro.txt",
-      "introText": "Desenvolvedor Backend/Fullstack com experiência em desenvolvimento de APIs, bancos de dados relacionais e infraestrutura Linux.",
+      "introText": "Desenvolvedor Backend/Fullstack com foco em Go, Node.js, TypeScript, APIs REST e bancos de dados relacionais, construindo aplicações e sistemas focado performance e qualidade de entrega.",
       "stackLabel": "Stack"
     }
   },
@@ -97,8 +97,8 @@
   },
   "whoami": {
     "title": "whoami",
-    "heading": "Analista de Sistemas / Desenvolvedor Fullstack com experiência em produção.",
-    "intro": "Desenvolvo e mantenho aplicações e sistemas corporativos. Minha atuação abrange modelagem de banco de dados (MySQL, Oracle, PostgreSQL), backend (Node.js, NestJS, PHP) e frontend/mobile (Next.js, React, React Native, Angular), além de infraestrutura Linux e deploys via SSH.",
+    "heading": "Analista de Sistemas / Desenvolvedor Fullstack.",
+    "intro": "Atuo no desenvolvimento e evolução de sistemas, trabalhando em diferentes partes da aplicação, tais como, interfaces web e mobile. Minha stack inclui Node.js, NestJS, PHP, Next.js, React, React Native, Angular, MySQL, Oracle e PostgreSQL, Go, além de Linux e infraestrutura para deploy e manutenção dos sistemas.",
     "tagline": "Do banco de dados e backend ao deploy em ambientes Linux.",
     "production": "Desenvolvedor focado em resolver problemas reais. Atuo na implementação de funcionalidades, investigação de incidentes, modelagem de bancos de dados e automação de processos em sistemas utilizados diariamente por empresas.",
     "quotes": [
@@ -109,7 +109,7 @@
       "nameKey": "name",
       "roleKey": "role",
       "focusKey": "focus",
-      "focusValue": "sistemas corporativos, APIs e infraestrutura Linux",
+      "focusValue": "desenvolvimento de aplicações",
       "taglineKey": "tagline"
     },
     "diff": {
