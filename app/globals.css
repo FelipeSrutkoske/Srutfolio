@@ -90,12 +90,6 @@
   );
 }
 
-/* ---------------------------------------------------------------------------
- * Animated background — phosphor ambience behind all content.
- * Three compositor-friendly layers (transform/opacity only):
- * drifting major grid, breathing glow, and a slow scanline sweep.
- * Structural, not decorative — removed entirely under reduced motion.
- * ------------------------------------------------------------------------ */
 .bg-fx {
   position: fixed;
   inset: 0;
@@ -104,7 +98,12 @@
   pointer-events: none;
 }
 
-/* Major grid (96px) sliding exactly one tile per loop — seamless. */
+.bg-fx-glitch {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+}
+
 .bg-fx-grid {
   position: absolute;
   inset: -96px;
@@ -115,7 +114,6 @@
   animation: bg-grid-drift 80s linear infinite;
 }
 
-/* Faint radial bloom that slowly breathes. */
 .bg-fx-glow {
   position: absolute;
   inset: 0;
@@ -133,7 +131,6 @@
   animation: bg-glow-breathe 9s ease-in-out infinite;
 }
 
-/* One slow scanline pass down the viewport, then repeat. */
 .bg-fx-sweep {
   position: absolute;
   inset-inline: 0;
@@ -176,9 +173,6 @@
   }
 }
 
-/* Section headings fade/slide in as they enter the viewport.
-   Progressive enhancement: only where scroll-driven animations exist;
-   everywhere else headings render statically. */
 @keyframes section-reveal {
   from {
     opacity: 0;
@@ -200,7 +194,6 @@
   }
 }
 
-/* Thin, terminal-appropriate scrollbars. */
 * {
   scrollbar-width: thin;
   scrollbar-color: #3c4b35 transparent;
@@ -219,8 +212,6 @@
   background: transparent;
 }
 
-/* prefers-reduced-motion: everything renders instantly, cursor stops blinking,
-   and the ambient background layer is removed entirely. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

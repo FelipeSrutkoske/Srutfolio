@@ -4,13 +4,8 @@ import { profile } from "@/data/profile";
 import Terminal from "@/components/terminal";
 import HelpPanel from "@/components/help-panel";
 import WindowFrame from "@/components/window-frame";
+import HeroTitle from "@/components/hero-title";
 
-/**
- * Hero — the interactive shell. Occupies the first fold:
- * a large terminal window with seeded output and a live prompt.
- * The `[ ? ]` control floats on the window chrome and expands into
- * the command cheatsheet (overlaid, not part of the window flow).
- */
 export default function Hero({ locale }: { locale: string }) {
   const t = useTranslations("hero");
 
@@ -20,6 +15,8 @@ export default function Hero({ locale }: { locale: string }) {
         {locale === "en" ? (profile.roleEn ?? profile.role) : profile.role} —{" "}
         {profile.name}
       </h1>
+
+      <HeroTitle />
 
       <div className="relative">
         <WindowFrame
