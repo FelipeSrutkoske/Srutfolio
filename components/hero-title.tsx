@@ -73,13 +73,18 @@ export default function HeroTitle() {
     return (
       <p
         onClick={handleClick}
-        className="mb-6 flex min-h-20 cursor-pointer select-none items-center justify-center text-4xl font-bold tracking-tight md:min-h-24 md:text-5xl"
+        className="mb-6 flex min-h-20 cursor-pointer select-none items-center justify-center text-center text-base font-bold tracking-tight md:min-h-24 md:text-5xl"
       >
-        {display.split("").map((char, i) => (
-          <span key={i} className={i < revealed ? "text-primary-container" : "text-on-surface"}>
-            {char === " " ? "\u00A0" : char}
-          </span>
-        ))}
+        <span>
+          {display.split("").map((char, i) => (
+            <span
+              key={i}
+              className={i < revealed ? "text-primary-container" : "text-on-surface"}
+            >
+              {char}
+            </span>
+          ))}
+        </span>
       </p>
     );
   }
@@ -93,6 +98,7 @@ export default function HeroTitle() {
       title={locked ? "click to decrypt" : undefined}
     >
       <FuzzyText
+        className="h-auto max-w-full"
         fontSize={FONT_SIZE}
         fontWeight={700}
         fontFamily="inherit"
