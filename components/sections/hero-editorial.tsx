@@ -13,8 +13,8 @@ export default function HeroEditorial() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative flex min-h-[88vh] flex-col justify-between overflow-hidden border-b border-rule-strong bg-paper px-4 pb-10 pt-8 md:px-8 md:pb-14 md:pt-12">
-      {/* Three.js GLSL Sculpture Layer */}
+    <section className="relative isolate flex min-h-[88vh] flex-col justify-between overflow-hidden border-b border-rule-strong bg-paper px-4 pb-10 pt-8 md:px-8 md:pb-14 md:pt-12">
+      {/* Three.js GLSL Sculpture Layer (no z-index isolation so mix-blend-difference blends against it + bg-paper) */}
       <KineticMonolith />
 
       {/* Top Metadata Strip */}
@@ -25,9 +25,9 @@ export default function HeroEditorial() {
         </span>
       </div>
 
-      {/* Giant Mix-Blend-Difference Typography */}
-      <div className="relative z-10 my-auto py-12 md:py-16">
-        <h1 className="pointer-events-none select-none font-display text-[clamp(3.25rem,10.5vw,9rem)] font-extrabold uppercase leading-[0.86] tracking-[-0.04em] text-white mix-blend-difference">
+      {/* Giant Mix-Blend-Difference Typography: #FFFFFF over #F4F2ED renders #0B0D12 (crisp dark) and inverts dynamically over the 3D object */}
+      <div className="pointer-events-none my-auto py-12 mix-blend-difference md:py-16">
+        <h1 className="select-none font-display text-[clamp(3.25rem,10.5vw,9rem)] font-extrabold uppercase leading-[0.86] tracking-[-0.04em] text-white">
           <span className="block">{t("headlineTop")}</span>
           <span className="block font-serif font-normal italic tracking-[-0.02em]">
             {t("headlineMid")}

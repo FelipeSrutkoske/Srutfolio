@@ -87,7 +87,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         {/* Visual Mockup + Problem Context */}
         <section className="mt-12 grid items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-6">
-            <ProjectMockup projectId={project.id} />
+            <ProjectMockup projectId={project.id} interactiveMap />
           </div>
 
           <div className="space-y-6 md:col-span-6">

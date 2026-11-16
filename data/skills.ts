@@ -1,6 +1,7 @@
 export interface SkillItem {
   name: string;
-  priority?: "primary" | "standard";
+  tag?: string;
+  tagEn?: string;
   note: string;
   noteEn: string;
   usedIn: string[];
@@ -17,30 +18,31 @@ export interface SkillPillar {
 
 export const skillPillars: SkillPillar[] = [
   {
-    id: "backend-go",
-    title: "Backend, APIs & Prioridade Go",
-    titleEn: "Backend, APIs & Go Priority",
-    subtitle: "Foco principal em Golang + ecossistema sólido em Node.js e PHP",
-    subtitleEn: "Primary focus on Golang + battle-tested Node.js and PHP",
+    id: "backend",
+    title: "Backend & Sistemas",
+    titleEn: "Backend & Systems",
+    subtitle: "Foco atual em Golang, além de base sólida em Node.js e PHP",
+    subtitleEn: "Current focus on Golang, alongside solid Node.js and PHP experience",
     items: [
       {
         name: "Go (Golang)",
-        priority: "primary",
-        note: "Prioridade de carreira: concorrência, CLIs, microsserviços e APIs de alta performance",
-        noteEn: "Career priority: concurrency, CLIs, microservices, and high-throughput APIs",
-        usedIn: ["vehigo"],
+        tag: "Foco atual",
+        tagEn: "Current focus",
+        note: "CLIs/TUIs, concorrência, microsserviços e ferramentas de terminal",
+        noteEn: "CLIs/TUIs, concurrency, microservices, and terminal tooling",
+        usedIn: ["go-vit"],
       },
       {
         name: "Node.js & NestJS",
         note: "APIs REST modulares, microsserviços, testes Jest e automações",
         noteEn: "Modular REST APIs, microservices, Jest testing, and automations",
-        usedIn: ["vehigo", "tcc", "skypass-features"],
+        usedIn: ["tcc", "vehigo", "skypass-features"],
       },
       {
         name: "TypeScript",
         note: "Tipagem estrita ponta a ponta entre API, web e mobile",
         noteEn: "End-to-end strict typing across API, web, and mobile",
-        usedIn: ["vehigo", "tcc", "memedio"],
+        usedIn: ["tcc", "vehigo"],
       },
       {
         name: "PHP",
@@ -54,8 +56,8 @@ export const skillPillars: SkillPillar[] = [
     id: "frontend-mobile",
     title: "Frontend & Mobile",
     titleEn: "Frontend & Mobile",
-    subtitle: "Interfaces responsivas, extensões e apps offline-first",
-    subtitleEn: "Responsive interfaces, browser extensions, and offline-first apps",
+    subtitle: "Interfaces web modernas, estilização e aplicativos mobile",
+    subtitleEn: "Modern web interfaces, styling systems, and mobile apps",
     items: [
       {
         name: "Next.js & React",
@@ -64,10 +66,16 @@ export const skillPillars: SkillPillar[] = [
         usedIn: ["tcc"],
       },
       {
+        name: "Tailwind CSS",
+        note: "Design systems responsivos, prototipação rápida e interfaces consistentes",
+        noteEn: "Responsive design systems, rapid prototyping, and consistent UI",
+        usedIn: ["tcc"],
+      },
+      {
         name: "React Native & Expo",
-        note: "Apps iOS/Android com mapas, JWT e módulos nativos offline",
-        noteEn: "iOS/Android apps with maps, JWT, and native offline modules",
-        usedIn: ["vehigo", "tcc", "memedio"],
+        note: "Apps iOS/Android com Google Maps, JWT e integração de APIs",
+        noteEn: "iOS/Android apps with Google Maps, JWT, and API integrations",
+        usedIn: ["tcc", "vehigo"],
       },
       {
         name: "Angular",
@@ -75,38 +83,32 @@ export const skillPillars: SkillPillar[] = [
         noteEn: "Evolution and debugging of enterprise web systems",
         usedIn: ["skypass-features"],
       },
-      {
-        name: "Manifest V3 / Web APIs",
-        note: "Service Workers, extensões Chromium e integrações assíncronas",
-        noteEn: "Service Workers, Chromium extensions, and async integrations",
-        usedIn: ["vt-shield"],
-      },
     ],
   },
   {
     id: "data-infra",
-    title: "Dados, Infra Linux & IA",
-    titleEn: "Data, Linux Infra & AI",
-    subtitle: "Do DER ao deploy via SSH, proxies reversos e fluxos com agentes",
-    subtitleEn: "From ERD modeling to SSH deploys, reverse proxies, and AI workflows",
+    title: "Dados, Infra Linux & Rust",
+    titleEn: "Data, Linux Infra & Rust",
+    subtitle: "Do DER ao deploy via SSH, proxies reversos e binários nativos",
+    subtitleEn: "From ERD modeling to SSH deploys, reverse proxies, and native binaries",
     items: [
       {
         name: "PostgreSQL, MySQL & Oracle",
         note: "Modelagem relacional, queries otimizadas e integridade transacional",
         noteEn: "Relational modeling, query tuning, and transactional integrity",
-        usedIn: ["vehigo", "tcc", "skypass-features"],
+        usedIn: ["tcc", "vehigo", "skypass-features"],
       },
       {
         name: "Linux / SSH / Nginx / Docker",
         note: "Deploys em produção, API Gateway, automação Python e mitigação de incidentes",
         noteEn: "Production deploys, API Gateway, Python automation, and incident mitigation",
-        usedIn: ["vehigo", "skypass-features"],
+        usedIn: ["vehigo", "skypass-features", "look4"],
       },
       {
-        name: "AI Agents & CLI Tooling",
-        note: "Orquestração de agentes, engenharia de prompt e aceleração de entrega",
-        noteEn: "Agent orchestration, prompt engineering, and delivery acceleration",
-        usedIn: ["tcc", "memedio"],
+        name: "Rust (GTK4 / Desktop)",
+        note: "Utilitários nativos para GNOME/Linux com foco em velocidade e segurança",
+        noteEn: "Native GNOME/Linux utilities focused on speed and safety",
+        usedIn: ["look4"],
       },
     ],
   },

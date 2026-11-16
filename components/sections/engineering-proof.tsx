@@ -88,7 +88,6 @@ export default function EngineeringProof({ locale }: { locale: string }) {
                 <div className="mt-6 space-y-3">
                   {pillar.items.map((item) => {
                     const isSelected = activeTech === item.name;
-                    const isPrimary = item.priority === "primary";
                     return (
                       <button
                         key={item.name}
@@ -99,34 +98,28 @@ export default function EngineeringProof({ locale }: { locale: string }) {
                         className={`w-full border p-3 text-left transition-all ${
                           isSelected
                             ? "border-ink bg-mustard text-ink shadow-[3px_3px_0px_#0E0E0D]"
-                            : isPrimary
-                              ? "border-ink bg-ink text-paper hover:bg-mustard hover:text-ink"
-                              : "border-rule bg-paper-alt/60 text-ink hover:border-ink"
+                            : "border-rule bg-paper-alt/60 text-ink hover:border-ink"
                         }`}
                       >
                         <div className="flex items-center justify-between gap-2">
                           <span className="font-mono text-xs font-bold uppercase">
                             {item.name}
                           </span>
-                          {isPrimary && (
+                          {item.tag && (
                             <span
-                              className={`px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase ${
+                              className={`px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase ${
                                 isSelected
                                   ? "bg-ink text-mustard"
-                                  : "bg-mustard text-ink"
+                                  : "border border-ink/40 text-ink"
                               }`}
                             >
-                              {t("priorityBadge")}
+                              {pick(locale, item.tag, item.tagEn)}
                             </span>
                           )}
                         </div>
                         <p
                           className={`mt-1.5 text-xs leading-relaxed ${
-                            isSelected
-                              ? "text-ink/85"
-                              : isPrimary
-                                ? "text-paper/80"
-                                : "text-ink-muted"
+                            isSelected ? "text-ink/90" : "text-ink-muted"
                           }`}
                         >
                           {pick(locale, item.note, item.noteEn)}

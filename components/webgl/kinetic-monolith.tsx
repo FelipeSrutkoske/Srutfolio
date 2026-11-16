@@ -6,54 +6,44 @@ import * as THREE from "three";
 const vertexShader = /* glsl */ `
   uniform float uTime;
   uniform vec2 uMouse;
-  uniform float uScroll;
   varying vec3 vNormal;
-  varying vec3 vPosition;
-  varying float vNoise;
-
-  // Compact 3D simplex-like trigonometric displacement for 60fps smoothness
-  float field(vec3 p) {
-    return sin(p.x * 2.1 + uTime * 0.85) *
-           cos(p.y * 2.3 - uTime * 0.65) *
-           sin(p.z * 2.0 + uTime * 0.75);
-  }
+  varying vec3 vViewPos;
 
   void main() {
     vNormal = normalize(normalMatrix * normal);
     vec3 pos = position;
 
-    float n = field(pos * 1.15);
-    float mousePull = 1.0 + 0.12 * sin(pos.x * 2.0 + uMouse.x * 3.14);
-    float disp = n * (0.28 + uScroll * 0.22) * mousePull;
+    // Subtle breathing pulse along normal
+    float pulse = sin(uTime * 1.4 + pos.y * 1.8) * 0.025;
+    pos += normal * pulse;
 
-    pos += normal * disp;
-    vNoise = n;
-    vPosition = pos;
-
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+    vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+    vViewPos = -mvPosition.xyz;
+    gl_Position = projectionMatrix * mvPosition;
   }
 `;
 
 const fragmentShader = /* glsl */ `
-  uniform float uTime;
   varying vec3 vNormal;
-  varying vec3 vPosition;
-  varying float vNoise;
+  varying vec3 vViewPos;
 
   void main() {
-    vec3 viewDir = normalize(vec3(0.0, 0.0, 1.0));
-    float fresnel = pow(1.0 - max(dot(vNormal, viewDir), 0.0), 2.4);
+    vec3 normal = normalize(vNormal);
+    vec3 viewDir = normalize(vViewPos);
 
-    // Editorial Mustard (#E0A714), Warm Ivory (#F4F2ED), and Charcoal (#141413)
-    vec3 charcoal = vec3(0.06, 0.06, 0.06);
+    // Clean studio rim lighting (Fresnel) + directional key light
+    float fresnel = pow(1.0 - max(dot(normal, viewDir), 0.0), 2.2);
+    vec3 lightDir = normalize(vec3(0.6, 0.8, 0.7));
+    float diff = max(dot(normal, lightDir), 0.0);
+
+    vec3 charcoal = vec3(0.055, 0.055, 0.052);
     vec3 mustard = vec3(0.878, 0.655, 0.078);
-    vec3 highlight = vec3(0.98, 0.89, 0.56);
+    vec3 warmGold = vec3(0.96, 0.82, 0.38);
 
-    float band = smoothstep(-0.45, 0.55, vNoise + vNormal.y * 0.35);
-    vec3 baseColor = mix(charcoal, mustard, band);
-    vec3 finalColor = mix(baseColor, highlight, fresnel * 0.78);
+    vec3 base = mix(charcoal, mustard, smoothstep(0.15, 0.85, diff));
+    vec3 color = mix(base, warmGold, fresnel * 0.72);
 
-    gl_FragColor = vec4(finalColor, 1.0);
+    gl_FragColor = vec4(color, 1.0);
   }
 `;
 
@@ -88,18 +78,18 @@ export default function KineticMonolith() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
-      42,
+      40,
       container.clientWidth / Math.max(container.clientHeight, 1),
       0.1,
       100
     );
-    camera.position.z = 4.6;
+    camera.position.z = 5.2;
 
-    const geometry = new THREE.IcosahedronGeometry(1.38, 28);
+    // Clean architectural TorusKnot sculpture
+    const geometry = new THREE.TorusKnotGeometry(1.12, 0.34, 180, 32, 2, 3);
     const uniforms = {
       uTime: { value: 0 },
       uMouse: { value: new THREE.Vector2(0, 0) },
-      uScroll: { value: 0 },
     };
 
     const material = new THREE.ShaderMaterial({
@@ -109,22 +99,24 @@ export default function KineticMonolith() {
     });
 
     const mesh = new THREE.Mesh(geometry, material);
+    mesh.position.x = 0.65;
     scene.add(mesh);
 
-    // Thin orbital wireframe ring for technical precision
-    const ringGeo = new THREE.TorusGeometry(2.05, 0.008, 12, 96);
-    const ringMat = new THREE.MeshBasicMaterial({
+    // Subtle wireframe cage around the knot
+    const wireGeo = new THREE.IcosahedronGeometry(2.15, 1);
+    const wireMat = new THREE.MeshBasicMaterial({
       color: 0x0e0e0d,
+      wireframe: true,
       transparent: true,
-      opacity: 0.25,
+      opacity: 0.08,
     });
-    const ring = new THREE.Mesh(ringGeo, ringMat);
-    ring.rotation.x = Math.PI * 0.38;
-    ring.rotation.y = Math.PI * 0.14;
-    scene.add(ring);
+    const wire = new THREE.Mesh(wireGeo, wireMat);
+    wire.position.x = 0.65;
+    scene.add(wire);
 
     const targetMouse = { x: 0, y: 0 };
     const currentMouse = { x: 0, y: 0 };
+    let scrollProgress = 0;
     let isVisible = true;
 
     const onPointerMove = (e: PointerEvent) => {
@@ -133,8 +125,10 @@ export default function KineticMonolith() {
     };
 
     const onScroll = () => {
-      const progress = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 1.5);
-      uniforms.uScroll.value = progress;
+      scrollProgress = Math.min(
+        window.scrollY / Math.max(window.innerHeight, 1),
+        1.5
+      );
     };
 
     const onResize = () => {
@@ -172,17 +166,18 @@ export default function KineticMonolith() {
       currentMouse.y += (targetMouse.y - currentMouse.y) * 0.06;
       uniforms.uMouse.value.set(currentMouse.x, currentMouse.y);
 
-      mesh.position.x = currentMouse.x * 0.42;
-      mesh.position.y = currentMouse.y * 0.28 - uniforms.uScroll.value * 0.35;
-      mesh.rotation.y = elapsed * 0.18 + currentMouse.x * 0.5;
-      mesh.rotation.x = elapsed * 0.12 - currentMouse.y * 0.4;
+      mesh.position.x = 0.65 + currentMouse.x * 0.35;
+      mesh.position.y = currentMouse.y * 0.25 - scrollProgress * 0.35;
+      mesh.rotation.y = elapsed * 0.24 + currentMouse.x * 0.45;
+      mesh.rotation.x = elapsed * 0.16 - currentMouse.y * 0.35;
 
-      const scale = Math.max(0.75, 1 - uniforms.uScroll.value * 0.18);
+      const scale = Math.max(0.78, 1 - scrollProgress * 0.18);
       mesh.scale.setScalar(scale);
 
-      ring.rotation.z = elapsed * 0.08;
-      ring.position.x = -currentMouse.x * 0.18;
-      ring.position.y = -currentMouse.y * 0.12;
+      wire.rotation.y = -elapsed * 0.09;
+      wire.rotation.x = elapsed * 0.06;
+      wire.position.x = 0.65 - currentMouse.x * 0.15;
+      wire.position.y = -currentMouse.y * 0.1;
 
       renderer.render(scene, camera);
     };
@@ -198,8 +193,8 @@ export default function KineticMonolith() {
 
       geometry.dispose();
       material.dispose();
-      ringGeo.dispose();
-      ringMat.dispose();
+      wireGeo.dispose();
+      wireMat.dispose();
       renderer.dispose();
       if (renderer.domElement.parentNode === container) {
         container.removeChild(renderer.domElement);
@@ -213,7 +208,7 @@ export default function KineticMonolith() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 flex items-center justify-center"
       >
-        <div className="h-64 w-64 rounded-full bg-mustard/80 blur-2xl md:h-96 md:w-96" />
+        <div className="h-64 w-64 rounded-full bg-mustard/75 blur-2xl md:h-96 md:w-96" />
       </div>
     );
   }
@@ -222,7 +217,7 @@ export default function KineticMonolith() {
     <div
       ref={containerRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      className="pointer-events-none absolute inset-0 overflow-hidden"
     />
   );
 }

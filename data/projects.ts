@@ -37,86 +37,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "vehigo",
-    slug: "vehigo",
-    featured: true,
-    year: "2025",
-    category: "Arquitetura Distribuída",
-    categoryEn: "Distributed Architecture",
-    title: "VehiGo",
-    titleEn: "VehiGo",
-    subtitle: "Plataforma de Aluguel de Veículos em Microsserviços",
-    subtitleEn: "Distributed Vehicle Rental Microservices Platform",
-    summary:
-      "Plataforma distribuída com API Gateway Nginx, microsserviços desacoplados, PostgreSQL com TypeORM e aplicativo mobile React Native.",
-    summaryEn:
-      "Distributed platform engineered with Nginx API Gateway, decoupled microservices, PostgreSQL with TypeORM, and a React Native mobile app.",
-    problem:
-      "Sistemas monolíticos de reserva sofrem com acoplamento entre catálogo, usuários e agendamentos. O VehiGo foi desenhado com DDD, Diagramas C4, ADRs e especificações OpenAPI 3.0 para isolar domínios e escalar serviços de forma independente.",
-    problemEn:
-      "Monolithic booking systems suffer from tight coupling between users, fleet catalog, and reservations. VehiGo was designed using DDD, C4 Diagrams, ADRs, and OpenAPI 3.0 specs to isolate bounded contexts and scale services independently.",
-    stack: ["Node.js", "TypeScript", "Nginx", "PostgreSQL", "React Native", "Docker"],
-    highlights: [
-      "3 microsserviços desacoplados (usuarios-service, veiculos-service, reservas-service)",
-      "API Gateway centralizado em Nginx com proxies reversos e controle de Ingress",
-      "Persistência relacional em PostgreSQL 15 com TypeORM e containers Docker",
-      "App mobile iOS/Android em React Native (Expo) com autenticação JWT e filtros",
-      "Documentação arquitetural completa: Diagramas C4, DDD, ADRs e OpenAPI 3.0",
-    ],
-    highlightsEn: [
-      "3 decoupled microservices (usuarios-service, veiculos-service, reservas-service)",
-      "Centralized Nginx API Gateway handling reverse proxies and Ingress routing",
-      "Relational persistence in PostgreSQL 15 via TypeORM inside Docker containers",
-      "iOS/Android mobile app in React Native (Expo) with JWT auth and fleet filtering",
-      "Complete architectural docs: C4 Diagrams, DDD, ADRs, and OpenAPI 3.0 specs",
-    ],
-    architectureNodes: [
-      {
-        id: "mobile",
-        label: "Mobile App",
-        layer: "client",
-        tech: "React Native • Expo • JWT",
-        description:
-          "Cliente iOS/Android responsável pelo fluxo de autenticação, busca filtrada de veículos e criação de reservas.",
-        descriptionEn:
-          "iOS/Android client handling JWT authentication, filtered vehicle search, and reservation checkout.",
-      },
-      {
-        id: "nginx",
-        label: "Nginx Gateway",
-        layer: "gateway",
-        tech: "Nginx • Reverse Proxy",
-        description:
-          "Ponto único de entrada que roteia requisições HTTP para os respectivos microsserviços internos sem expor portas diretas.",
-        descriptionEn:
-          "Single entry point routing HTTP traffic to internal microservices without exposing service ports directly.",
-      },
-      {
-        id: "services",
-        label: "Core Services (x3)",
-        layer: "service",
-        tech: "Node.js • Express • TypeScript",
-        description:
-          "Serviços isolados por domínio (usuários, veículos e reservas), seguindo Bounded Contexts de DDD e contratos OpenAPI 3.0.",
-        descriptionEn:
-          "Domain-isolated services (users, vehicles, reservations) following DDD Bounded Contexts and OpenAPI 3.0 contracts.",
-      },
-      {
-        id: "postgres",
-        label: "PostgreSQL 15",
-        layer: "data",
-        tech: "PostgreSQL • TypeORM • Docker",
-        description:
-          "Camada de persistência relacional containerizada garantindo integridade transacional nas reservas.",
-        descriptionEn:
-          "Containerized relational persistence layer ensuring transactional integrity across bookings.",
-      },
-    ],
-    links: {
-      repo: "https://github.com/FelipeSrutkoske/VehiGo",
-    },
-  },
-  {
     id: "tcc",
     slug: "trackit",
     featured: true,
@@ -197,140 +117,218 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "vt-shield",
-    slug: "vt-shield",
+    id: "vehigo",
+    slug: "vehigo",
     featured: true,
     year: "2025",
-    category: "Cibersegurança",
-    categoryEn: "Cybersecurity",
-    title: "VT Shield",
-    titleEn: "VT Shield",
-    subtitle: "Extensão Chromium de Análise Cibernética em Tempo Real",
-    subtitleEn: "Real-Time Chromium Cyber Threat Scanner Extension",
+    category: "Arquitetura Distribuída",
+    categoryEn: "Distributed Architecture",
+    title: "VehiGo",
+    titleEn: "VehiGo",
+    subtitle: "Plataforma de Aluguel de Veículos em Microsserviços",
+    subtitleEn: "Distributed Vehicle Rental Microservices Platform",
     summary:
-      "Extensão Manifest V3 com Service Workers para análise instantânea de links e textos suspeitos integrada à API v3 do VirusTotal.",
+      "Plataforma distribuída com API Gateway Nginx, microsserviços desacoplados, PostgreSQL com TypeORM e aplicativo mobile React Native.",
     summaryEn:
-      "Manifest V3 browser extension powered by Service Workers for instant link and text threat scanning via VirusTotal API v3.",
+      "Distributed platform engineered with Nginx API Gateway, decoupled microservices, PostgreSQL with TypeORM, and a React Native mobile app.",
     problem:
-      "Copiar links suspeitos manualmente para analisadores web quebra o fluxo de navegação e expõe usuários a phishing. O VT Shield coloca inteligência de ameaças direto no menu de contexto do navegador.",
+      "Sistemas monolíticos de reserva sofrem com acoplamento entre catálogo, usuários e agendamentos. O VehiGo foi desenhado com DDD, Diagramas C4, ADRs e especificações OpenAPI 3.0 para isolar domínios e escalar serviços de forma independente.",
     problemEn:
-      "Manually copying suspicious links into web scanners breaks browsing flow and exposes users to phishing. VT Shield brings threat intelligence directly to the browser context menu.",
-    stack: ["JavaScript", "Manifest V3", "Service Workers", "VirusTotal API v3"],
+      "Monolithic booking systems suffer from tight coupling between users, fleet catalog, and reservations. VehiGo was designed using DDD, C4 Diagrams, ADRs, and OpenAPI 3.0 specs to isolate bounded contexts and scale services independently.",
+    stack: ["Node.js", "TypeScript", "Nginx", "PostgreSQL", "React Native", "Docker"],
     highlights: [
-      "Arquitetura moderna Manifest V3 para navegadores baseados em Chromium",
-      "Service Workers em background para contornar CORS e orquestrar chamadas assíncronas",
-      "Integração com menu de contexto (clique direito) para links e textos selecionados",
-      "Submissão automática e polling inteligente para URLs ainda não catalogadas",
+      "3 microsserviços desacoplados (usuarios-service, veiculos-service, reservas-service)",
+      "API Gateway centralizado em Nginx com proxies reversos e controle de Ingress",
+      "Persistência relacional em PostgreSQL 15 com TypeORM e containers Docker",
+      "App mobile iOS/Android em React Native (Expo) com autenticação JWT e filtros",
+      "Documentação arquitetural completa: Diagramas C4, DDD, ADRs e OpenAPI 3.0",
     ],
     highlightsEn: [
-      "Modern Manifest V3 architecture for Chromium-based browsers",
-      "Background Service Workers bypassing CORS restrictions and managing async workflows",
-      "Right-click context menu scanning for both URLs and selected text",
-      "Automated URL submission and polling for uncatalogued links",
+      "3 decoupled microservices (usuarios-service, veiculos-service, reservas-service)",
+      "Centralized Nginx API Gateway handling reverse proxies and Ingress routing",
+      "Relational persistence in PostgreSQL 15 via TypeORM inside Docker containers",
+      "iOS/Android mobile app in React Native (Expo) with JWT auth and fleet filtering",
+      "Complete architectural docs: C4 Diagrams, DDD, ADRs, and OpenAPI 3.0 specs",
     ],
     architectureNodes: [
       {
-        id: "context",
-        label: "Context Menu UI",
+        id: "mobile",
+        label: "Mobile App",
         layer: "client",
-        tech: "Chrome Extension • HTML/CSS",
+        tech: "React Native • Expo • JWT",
         description:
-          "Captura seleção de texto ou URL via clique direito e exibe o veredito de segurança ao usuário.",
+          "Cliente iOS/Android responsável pelo fluxo de autenticação, busca filtrada de veículos e criação de reservas.",
         descriptionEn:
-          "Captures right-click link or text selections and surfaces threat verdicts cleanly.",
+          "iOS/Android client handling JWT authentication, filtered vehicle search, and reservation checkout.",
       },
       {
-        id: "worker",
-        label: "Service Worker",
+        id: "nginx",
+        label: "Nginx Gateway",
+        layer: "gateway",
+        tech: "Nginx • Reverse Proxy",
+        description:
+          "Ponto único de entrada que roteia requisições HTTP para os respectivos microsserviços internos sem expor portas diretas.",
+        descriptionEn:
+          "Single entry point routing HTTP traffic to internal microservices without exposing service ports directly.",
+      },
+      {
+        id: "services",
+        label: "Core Services (x3)",
         layer: "service",
-        tech: "Manifest V3 • Background",
+        tech: "Node.js • Express • TypeScript",
         description:
-          "Gerencia ciclo de vida assíncrono, contorno seguro de CORS e fila de polling.",
+          "Serviços isolados por domínio (usuários, veículos e reservas), seguindo Bounded Contexts de DDD e contratos OpenAPI 3.0.",
         descriptionEn:
-          "Manages async lifecycle, CORS-safe requests, and polling queue.",
+          "Domain-isolated services (users, vehicles, reservations) following DDD Bounded Contexts and OpenAPI 3.0 contracts.",
       },
       {
-        id: "virustotal",
-        label: "VirusTotal API v3",
+        id: "postgres",
+        label: "PostgreSQL 15",
         layer: "data",
-        tech: "REST v3 • Threat Intel",
+        tech: "PostgreSQL • TypeORM • Docker",
         description:
-          "Consulta reputação de URLs e submete links inéditos para análise multi-engine.",
+          "Camada de persistência relacional containerizada garantindo integridade transacional nas reservas.",
         descriptionEn:
-          "Queries URL reputation and submits uncatalogued links for multi-engine scanning.",
+          "Containerized relational persistence layer ensuring transactional integrity across bookings.",
       },
     ],
     links: {
-      repo: "https://github.com/FelipeSrutkoske/VT_SHIELD",
+      repo: "https://github.com/FelipeSrutkoske/VehiGo",
     },
   },
   {
-    id: "memedio",
-    slug: "memedio",
-    featured: false,
+    id: "go-vit",
+    slug: "go-vit",
+    featured: true,
     year: "2026",
-    category: "Mobile Offline-First",
-    categoryEn: "Offline-First Mobile",
-    title: "Memedio",
-    titleEn: "Memedio",
-    subtitle: "Gestão de Medicamentos 100% Offline",
-    subtitleEn: "100% Offline Medication & Inventory Manager",
+    category: "Open Source • CLI / TUI em Go",
+    categoryEn: "Open Source • Go CLI / TUI",
+    title: "go-vit",
+    titleEn: "go-vit",
+    subtitle: "Gerenciador Visual de Git para Terminal em Golang",
+    subtitleEn: "Visual Git Manager TUI Built in Golang",
     summary:
-      "App Android em React Native com Clean Architecture, módulo nativo AlarmManager para alertas exatos na tela de bloqueio e controle de estoque.",
+      "Ferramenta TUI open-source escrita em Go para gerenciar branches, diffs coloridos linha a linha, stage/commit, stash e resolução visual de conflitos.",
     summaryEn:
-      "Android React Native app built with Clean Architecture, native AlarmManager exact-time lock-screen alerts, and automatic pill inventory control.",
+      "Open-source terminal UI (TUI) written in Go for managing branches, line-by-line color diffs, staging/commits, stash, and visual merge conflict resolution.",
     problem:
-      "Apps de saúde falham quando dependem de internet ou notificações imprecisas do SO. O Memedio garante disparo no minuto exato mesmo offline com confirmação direta na tela de bloqueio.",
+      "Alternar entre comandos Git verbosos no terminal e IDEs pesadas quebra o fluxo de trabalho. O go-vit entrega uma interface TUI leve, instalável com um único binário Go (`go install`), intuitiva para uso diário.",
     problemEn:
-      "Health apps fail when relying on network connectivity or OS-throttled notifications. Memedio guarantees exact-minute alerts completely offline with lock-screen dose confirmation.",
-    stack: ["React Native", "TypeScript", "Clean Architecture", "AlarmManager", "Reanimated"],
+      "Switching between verbose Git CLI commands and heavy IDEs breaks developer flow. go-vit delivers a fast, single-binary Go TUI (`go install`) built for everyday Git workflows.",
+    stack: ["Go (Golang)", "TUI", "Git CLI", "Open Source"],
     highlights: [
-      "Agendamento de doses e baixa automática de estoque funcionando 100% offline",
-      "Clean Architecture com separação clara entre domínio, casos de uso e persistência local",
-      "Integração com módulo nativo Android AlarmManager para alarmes exatos",
-      "Animações acessíveis com Reanimated e testes automatizados",
+      "Instalável via `go install github.com/FelipeSrutkoske/go-vit@latest`",
+      "Gerenciamento completo de branches locais/remotas com opção automática de Stash + Switch",
+      "Visualização de diff linha a linha com destaque semântico (+ / -) e navegação estilo Vim (j/k/g/G)",
+      "Detector visual de conflitos de merge (Ours / Theirs / abrir direto no $EDITOR)",
     ],
     highlightsEn: [
-      "Daily dose scheduling and automatic inventory deduction running 100% offline",
-      "Clean Architecture separating domain, use cases, and local storage",
-      "Native Android AlarmManager integration for exact-time lock-screen alerts",
-      "Accessible Reanimated interactions and automated test coverage",
+      "Distributable via `go install github.com/FelipeSrutkoske/go-vit@latest`",
+      "Full local/remote branch management with automatic Stash + Switch safety",
+      "Line-by-line semantic diff viewer with Vim-style keyboard navigation (j/k/g/G)",
+      "Visual merge conflict resolver (Ours / Theirs / open directly in $EDITOR)",
     ],
     architectureNodes: [
       {
-        id: "ui",
-        label: "Mobile UI",
+        id: "tui",
+        label: "TUI Event Loop",
         layer: "client",
-        tech: "React Native • Reanimated",
-        description: "Interface acessível com validação rigorosa de horários e doses.",
-        descriptionEn: "Accessible interface with strict schedule and dosage validation.",
+        tech: "Go • Keybindings (Vim)",
+        description:
+          "Interface dividida em abas (Branches / Alterações & Conflitos) com atalhos de teclado responsivos.",
+        descriptionEn:
+          "Tabbed terminal interface (Branches / Changes & Conflicts) driven by responsive keyboard shortcuts.",
       },
       {
-        id: "domain",
-        label: "Clean Domain",
+        id: "git-engine",
+        label: "Git Command Runner",
         layer: "service",
-        tech: "TypeScript • Use Cases",
-        description: "Regras de cálculo de estoque e recorrência desacopladas do framework.",
-        descriptionEn: "Inventory deduction and recurrence rules decoupled from UI.",
+        tech: "Go os/exec • Parsers",
+        description:
+          "Orquestra status, diff, stash, fetch/pull e parseia marcadores de conflito em tempo real.",
+        descriptionEn:
+          "Orchestrates status, diff, stash, fetch/pull and parses conflict markers in real time.",
       },
       {
-        id: "native",
-        label: "AlarmManager + DB",
+        id: "repo",
+        label: "Local Git Repo",
         layer: "data",
-        tech: "Android Native • Local Storage",
-        description: "Disparo exato em background e persistência local sem internet.",
-        descriptionEn: "Exact background triggers and offline local persistence.",
+        tech: "Git • $EDITOR",
+        description:
+          "Opera diretamente sobre o repositório local com abertura imediata de conflitos no editor padrão.",
+        descriptionEn:
+          "Operates directly on local Git objects with instant fallback to $EDITOR.",
       },
     ],
-    links: {},
-    statusNote: "Em desenvolvimento",
-    statusNoteEn: "In development",
+    links: {
+      repo: "https://github.com/FelipeSrutkoske/go-vit",
+    },
+  },
+  {
+    id: "look4",
+    slug: "look4",
+    featured: false,
+    year: "2026",
+    category: "Desktop Linux • Rust & GTK4",
+    categoryEn: "Linux Desktop • Rust & GTK4",
+    title: "Look4",
+    titleEn: "Look4",
+    subtitle: "Verificador de Links & Redirecionamentos para GNOME",
+    subtitleEn: "Fast URL Security & Redirect Tracer for GNOME / Linux",
+    summary:
+      "Aplicativo nativo Linux em Rust + GTK4/Libadwaita com atalhos globais para análise via VirusTotal e rastreamento de URL final.",
+    summaryEn:
+      "Native Linux app built in Rust + GTK4/Libadwaita with global shortcuts for VirusTotal threat scanning and final redirect URL tracing.",
+    problem:
+      "Links encurtados e suspeitos exigem inspeção rápida sem abrir abas inseguras no navegador. O Look4 roda em background no GNOME e responde instantaneamente via atalhos globais.",
+    problemEn:
+      "Shortened and suspicious links need fast inspection without opening unsafe browser tabs. Look4 runs in the GNOME background and responds instantly via global shortcuts.",
+    stack: ["Rust", "GTK4", "Libadwaita", "Linux", "VirusTotal API"],
+    highlights: [
+      "Binário nativo compilado em Rust com interface GTK4 / Libadwaita integrada ao GNOME",
+      "Atalhos globais (Ctrl+Alt+V para scan de segurança, Ctrl+Alt+R para rastrear redirecionamentos)",
+      "Instalador automatizado com launcher no menu de aplicativos e autostart do usuário",
+    ],
+    highlightsEn: [
+      "Native Rust binary with GTK4 / Libadwaita UI integrated into GNOME",
+      "Global shortcuts (Ctrl+Alt+V for threat scan, Ctrl+Alt+R for final redirect trace)",
+      "Automated user-space installer with desktop launcher and autostart",
+    ],
+    architectureNodes: [
+      {
+        id: "gnome",
+        label: "GNOME & Shortcuts",
+        layer: "client",
+        tech: "GTK4 • Libadwaita • DBus",
+        description: "Atalhos globais e janela nativa integrada ao ambiente Linux.",
+        descriptionEn: "Global keyboard shortcuts and native Linux desktop window.",
+      },
+      {
+        id: "rust-core",
+        label: "Rust Core Tracer",
+        layer: "service",
+        tech: "Rust • OpenSSL • HTTP",
+        description: "Segue cadeias de redirecionamento HTTP e consulta reputação.",
+        descriptionEn: "Resolves HTTP redirect chains and queries link reputation.",
+      },
+      {
+        id: "vt-api",
+        label: "VirusTotal API",
+        layer: "data",
+        tech: "REST v3",
+        description: "Verificação de ameaças diretamente da área de transferência.",
+        descriptionEn: "Real-time threat checks straight from clipboard.",
+      },
+    ],
+    links: {
+      repo: "https://github.com/FelipeSrutkoske/look4",
+    },
   },
   {
     id: "skypass-features",
     slug: "skypass-enterprise",
     featured: false,
-    year: "2025—Atual",
+    year: "08/2025 — 08/2026",
     category: "Produção & Infra Linux",
     categoryEn: "Production & Linux Infra",
     title: "Skypass Modules",

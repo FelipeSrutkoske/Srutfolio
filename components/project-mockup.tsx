@@ -3,13 +3,42 @@ import type { ReactNode } from "react";
 interface ProjectMockupProps {
   projectId: string;
   compact?: boolean;
+  interactiveMap?: boolean;
 }
 
 export default function ProjectMockup({
   projectId,
   compact = false,
+  interactiveMap = false,
 }: ProjectMockupProps) {
   const visuals: Record<string, ReactNode> = {
+    tcc: (
+      <div className="relative flex h-full w-full flex-col justify-between overflow-hidden bg-[#EAE7DF] text-[#0E0E0D]">
+        {/* Real Google Maps embed */}
+        <iframe
+          title="TrackIt Google Maps Preview"
+          src="https://maps.google.com/maps?q=Campo+Mourao,+PR,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className={`absolute inset-0 h-full w-full border-0 grayscale-[25%] contrast-[1.08] ${
+            interactiveMap ? "pointer-events-auto" : "pointer-events-none"
+          }`}
+        />
+
+        {/* Top & Bottom Editorial HUD overlays */}
+        <div className="pointer-events-none relative z-10 flex items-center justify-between border-b border-black/20 bg-paper/90 px-4 py-2 font-mono text-[10px] uppercase backdrop-blur-sm">
+          <span className="font-bold">TRACKIT // AUDIT &amp; ROUTES</span>
+          <span className="bg-mustard px-1.5 py-0.5 font-bold text-ink">
+            GOOGLE MAPS API
+          </span>
+        </div>
+
+        <div className="pointer-events-none relative z-10 flex items-center justify-between border-t border-black/20 bg-ink/90 px-4 py-2 font-mono text-[10px] text-paper backdrop-blur-sm">
+          <span>NESTJS • NEXT.JS • REACT NATIVE</span>
+          <span className="text-mustard">BRASILAPI + JEST ✓</span>
+        </div>
+      </div>
+    ),
     vehigo: (
       <div className="flex h-full w-full flex-col justify-between bg-[#141413] p-5 text-[#F4F2ED]">
         <div className="flex items-center justify-between border-b border-white/10 pb-2.5 font-mono text-[10px] uppercase tracking-wider text-white/60">
@@ -39,116 +68,63 @@ export default function ProjectMockup({
         </div>
       </div>
     ),
-    tcc: (
-      <div className="flex h-full w-full flex-col justify-between bg-[#EAE7DF] p-5 text-[#0E0E0D]">
-        <div className="flex items-center justify-between border-b border-black/15 pb-2.5 font-mono text-[10px] uppercase">
-          <span>TRACKIT // AUDIT TRAIL</span>
-          <span className="bg-ink px-1.5 py-0.5 text-[9px] font-bold text-mustard">
-            LIVE ROUTE
-          </span>
-        </div>
-        <div className="my-auto grid grid-cols-12 gap-3 py-3">
-          <div className="col-span-7 rounded border border-black/15 bg-paper p-3">
-            <div className="font-mono text-[9px] uppercase text-ink-muted">
-              Google Maps Route
-            </div>
-            <svg
-              viewBox="0 0 180 70"
-              className="mt-2 h-16 w-full"
-              aria-hidden="true"
-            >
-              <path
-                d="M 10 55 Q 55 10, 95 40 T 170 18"
-                fill="none"
-                stroke="#0E0E0D"
-                strokeWidth="2.2"
-                strokeDasharray="4 3"
-              />
-              <circle cx="10" cy="55" r="4.5" fill="#E0A714" stroke="#0E0E0D" strokeWidth="1.5" />
-              <circle cx="95" cy="40" r="3.5" fill="#0E0E0D" />
-              <circle cx="170" cy="18" r="5" fill="#E0A714" stroke="#0E0E0D" strokeWidth="1.5" />
-            </svg>
+    "go-vit": (
+      <div className="flex h-full w-full flex-col justify-between bg-[#111214] p-5 font-mono text-[#F4F2ED]">
+        <div className="flex items-center justify-between border-b border-white/10 pb-2 text-[10px]">
+          <div className="flex items-center gap-2">
+            <span className="bg-mustard px-1.5 py-0.5 font-bold text-ink">
+              [1] Branches
+            </span>
+            <span className="text-white/50">[2] Changes &amp; Conflicts</span>
           </div>
-          <div className="col-span-5 flex flex-col justify-between rounded border border-black/15 bg-ink p-3 text-paper">
-            <div className="font-mono text-[9px] text-mustard">BRASILAPI</div>
-            <div className="font-mono text-[10px] leading-snug">
-              CNPJ VERIFIED
-              <br />
-              <span className="text-white/60">NATIVE FETCH</span>
-            </div>
-            <div className="font-mono text-[9px] text-mustard">JEST PASS ✓</div>
+          <span className="text-mustard">go-vit v1.x</span>
+        </div>
+
+        <div className="my-auto grid grid-cols-12 gap-3 py-3 text-[10px]">
+          <div className="col-span-5 space-y-1.5 border-r border-white/10 pr-2">
+            <div className="text-mustard font-bold">● main</div>
+            <div className="text-white/75">  feat/api-v2</div>
+            <div className="text-white/50">  fix/stash-switch</div>
+          </div>
+          <div className="col-span-7 space-y-1 text-[10px] leading-tight">
+            <div className="text-white/50">@@ internal/git/diff.go @@</div>
+            <div className="text-red-400">- err := exec.Command(&quot;git&quot;)</div>
+            <div className="text-emerald-400">+ return parseDiff(out)</div>
+            <div className="text-amber-300">! Ours / Theirs / $EDITOR</div>
           </div>
         </div>
-        <div className="flex items-center justify-between border-t border-black/15 pt-2.5 font-mono text-[10px] text-ink-muted">
-          <span>NESTJS • NEXT.JS</span>
-          <span>REACT NATIVE</span>
+
+        <div className="flex items-center justify-between border-t border-white/10 pt-2 text-[10px] text-white/55">
+          <span>j/k: nav • f: fetch • p: pull</span>
+          <span className="text-mustard">GO INSTALL READY</span>
         </div>
       </div>
     ),
-    "vt-shield": (
-      <div className="flex h-full w-full flex-col justify-between bg-[#141413] p-5 text-[#F4F2ED]">
+    look4: (
+      <div className="flex h-full w-full flex-col justify-between bg-[#1E1E20] p-5 text-[#F4F2ED]">
         <div className="flex items-center justify-between border-b border-white/10 pb-2.5 font-mono text-[10px]">
-          <span>MANIFEST V3 // SERVICE WORKER</span>
-          <span className="text-mustard">0 MALICIOUS</span>
+          <span>LOOK4 // GNOME GTK4</span>
+          <span className="text-mustard">RUST BINARY</span>
         </div>
-        <div className="my-auto space-y-2.5 py-3">
-          <div className="flex items-center justify-between rounded border border-mustard/40 bg-mustard/10 px-3 py-2">
-            <span className="font-mono text-[11px] font-bold text-mustard">
-              Right-Click → Scan URL
-            </span>
-            <span className="font-mono text-[10px] text-white/70">API v3</span>
+        <div className="my-auto space-y-2 py-3 font-mono text-[10px]">
+          <div className="flex items-center justify-between rounded border border-white/15 bg-white/5 px-3 py-2">
+            <span>Ctrl+Alt+V → VirusTotal Scan</span>
+            <span className="text-mustard">CLEAN</span>
           </div>
-          <div className="grid grid-cols-3 gap-2 font-mono text-[10px]">
-            <div className="rounded border border-white/10 bg-white/5 p-2 text-center">
-              <div className="text-white/50">ENGINES</div>
-              <div className="mt-0.5 font-bold">92/92</div>
-            </div>
-            <div className="rounded border border-white/10 bg-white/5 p-2 text-center">
-              <div className="text-white/50">CORS</div>
-              <div className="mt-0.5 font-bold text-mustard">BYPASSED</div>
-            </div>
-            <div className="rounded border border-white/10 bg-white/5 p-2 text-center">
-              <div className="text-white/50">POLLING</div>
-              <div className="mt-0.5 font-bold">AUTO</div>
-            </div>
+          <div className="flex items-center justify-between rounded border border-white/15 bg-white/5 px-3 py-2">
+            <span>Ctrl+Alt+R → Redirect Tracer</span>
+            <span className="text-white/70">FINAL URL</span>
           </div>
         </div>
         <div className="border-t border-white/10 pt-2.5 font-mono text-[10px] text-white/60">
-          CHROMIUM THREAT INTELLIGENCE
-        </div>
-      </div>
-    ),
-    memedio: (
-      <div className="flex h-full w-full flex-col justify-between bg-[#EAE7DF] p-5 text-[#0E0E0D]">
-        <div className="flex items-center justify-between border-b border-black/15 pb-2.5 font-mono text-[10px]">
-          <span>MEMEDIO // OFFLINE-FIRST</span>
-          <span className="font-bold">100% LOCAL</span>
-        </div>
-        <div className="my-auto flex items-center justify-between gap-4 py-3">
-          <div className="space-y-1.5">
-            <div className="font-mono text-[10px] uppercase text-ink-muted">
-              Next Dose Alarm
-            </div>
-            <div className="font-display text-3xl font-extrabold">08:00</div>
-            <div className="inline-block bg-mustard px-2 py-0.5 font-mono text-[10px] font-bold">
-              LOCK-SCREEN CONFIRM
-            </div>
-          </div>
-          <div className="rounded border border-black/20 bg-paper p-3 font-mono text-[10px]">
-            <div>Clean Arch ✓</div>
-            <div className="mt-1">AlarmManager ✓</div>
-            <div className="mt-1">Stock Sync ✓</div>
-          </div>
-        </div>
-        <div className="border-t border-black/15 pt-2.5 font-mono text-[10px] text-ink-muted">
-          ANDROID NATIVE • REANIMATED
+          LIBADWAITA • DBUS • OPENSSL
         </div>
       </div>
     ),
     "skypass-features": (
       <div className="flex h-full w-full flex-col justify-between bg-[#141413] p-5 text-[#F4F2ED]">
         <div className="flex items-center justify-between border-b border-white/10 pb-2.5 font-mono text-[10px]">
-          <span>SKYPASS // PRODUCTION OPS</span>
+          <span>SKYPASS // 08/2025 — 08/2026</span>
           <span className="text-mustard">MULTI-TENANT</span>
         </div>
         <div className="my-auto space-y-2 py-3 font-mono text-[10px]">
@@ -178,7 +154,7 @@ export default function ProjectMockup({
         compact ? "h-48" : "h-60 sm:h-72"
       }`}
     >
-      {visuals[projectId] ?? visuals.vehigo}
+      {visuals[projectId] ?? visuals.tcc}
     </div>
   );
 }
