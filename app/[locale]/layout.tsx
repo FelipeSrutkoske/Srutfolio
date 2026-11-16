@@ -1,5 +1,10 @@
 import "@/app/globals.css";
-import { JetBrains_Mono } from "next/font/google";
+import {
+  Instrument_Serif,
+  Inter,
+  JetBrains_Mono,
+  Syne,
+} from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -8,7 +13,29 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import { routing } from "@/i18n";
-import BackgroundFX from "@/components/background-fx";
+import SmoothScroll from "@/components/smooth-scroll";
+import CustomCursor from "@/components/custom-cursor";
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-syne",
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -21,10 +48,11 @@ type LayoutProps = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({ params }: LayoutProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: LayoutProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
-
   const path = locale === routing.defaultLocale ? "/" : `/${locale}`;
 
   return {
@@ -37,7 +65,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     alternates: {
       canonical: path,
       languages: {
-        pt: "/",
+        pt: "/pt",
         en: "/en",
       },
     },
@@ -47,11 +75,6 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       locale: locale === "pt" ? "pt_BR" : "en_US",
       type: "website",
       url: path,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
     },
   };
 }
@@ -67,10 +90,14 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={jetbrainsMono.variable}>
-      <body className="bg-background font-sans text-on-background antialiased">
-        <BackgroundFX />
+    <html
+      lang={locale}
+      className={`${syne.variable} ${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+    >
+      <body className="paper-grain bg-paper font-sans text-ink antialiased">
         <NextIntlClientProvider messages={messages} locale={locale}>
+          <SmoothScroll />
+          <CustomCursor />
           {children}
         </NextIntlClientProvider>
         <Analytics />

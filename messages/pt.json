@@ -1,194 +1,70 @@
 {
   "metadata": {
-    "title": "Felipe Srutkoske — Analista de Sistemas / Desenvolvedor Fullstack",
-    "description": "Portfólio de um analista de sistemas: quem eu sou, projetos, habilidades, experiência e contato."
+    "title": "Felipe Srutkoske — Fullstack Developer (Foco em Golang)",
+    "description": "Portfólio de Felipe Srutkoske: Desenvolvedor Fullstack com prioridade em Golang, arquitetura de microsserviços, sistemas corporativos e infraestrutura Linux."
   },
-  "brand": "felipesrutkoske@dev",
-  "skip": "Pular para o conteúdo",
   "nav": {
-    "aria": "Navegação principal",
-    "whoami": "whoami",
-    "projects": "projects",
-    "skills": "skills",
-    "experience": "experience",
-    "contact": "contact",
-    "downloadCv": "curriculo.pdf",
-    "paths": {
-      "whoami": "~/whoami.md",
-      "projects": "~/projects.sh",
-      "skills": "~/skills.json",
-      "experience": "~/experience.git",
-      "contact": "~/contact.log"
-    },
-    "github": "Abrir GitHub em nova aba"
-  },
-  "lang": {
-    "aria": "Selecionar idioma",
-    "en": "EN",
-    "pt": "PT-BR"
+    "works": "Projetos",
+    "stack": "Capacidades",
+    "experience": "Experiência",
+    "about": "Sobre",
+    "cv": "Currículo.pdf",
+    "backHome": "Voltar ao portfólio"
   },
   "hero": {
-    "windowPath": "felipesrutkoske@portfolio: ~",
-    "hint": "dica: digite \"help\" para listar os comandos — ou toque em um chip",
-    "seed": {
-      "whoamiCmd": "whoami",
-      "introCmd": "cat intro.txt",
-      "introText": "Desenvolvedor Backend/Fullstack com foco em Go, Node.js, TypeScript, APIs REST e bancos de dados relacionais, construindo aplicações e sistemas focado performance e qualidade de entrega.",
-      "stackLabel": "Stack"
-    }
+    "eyebrow": "FELIPE SRUTKOSKE // EDIÇÃO 2026",
+    "priorityTag": "Foco Principal: Golang • Fullstack & Infra Linux",
+    "headlineTop": "FULLSTACK",
+    "headlineMid": "SYSTEMS &",
+    "headlineBottom": "GOLANG.",
+    "subcopy": "Construo sistemas completos — de APIs concorrentes, microsserviços e bancos relacionais a interfaces web/mobile e deploy em servidores Linux.",
+    "ctaPrimary": "Explorar Projetos",
+    "ctaSecondary": "Baixar Currículo",
+    "scrollHint": "Role para explorar"
   },
-  "shell": {
-    "prompt": "$ ",
-    "placeholder": "digite um comando...",
-    "ariaInput": "Terminal interativo. Digite um comando e pressione Enter.",
-    "helpAria": "Mostrar ou ocultar a lista de comandos",
-    "tapLabel": "$ executar comando:",
-    "commands": {
-      "whoami": "whoami",
-      "projects": "projects",
-      "skills": "skills",
-      "experience": "experience",
-      "contact": "contact",
-      "cv": "cv",
-      "help": "help",
-      "clear": "clear",
-      "sudo": "sudo"
-    },
-    "helpText": "Comandos disponíveis:",
-    "notFound": "comando não encontrado",
-    "unknown": "digite \"help\" para ver a lista de comandos.",
-    "sudo": "permission denied: nice try. root é só para quem paga o café.",
-    "navigating": "→ navegando para #{section}",
-    "candidates": "correspondências:",
-    "output": {
-      "whoamiOpen": "[open] ~/portfolio/whoami.md",
-      "projectsFound": "[ok] {count} arquivos encontrados em ~/portfolio/projects/",
-      "skillsFound": "[ok] htop --tree → {count} processos ativos",
-      "experienceFound": "[ok] git log --graph → {count} commits",
-      "contactOpen": "[ok] canais de contato abertos"
-    },
-    "commandHelp": {
-      "whoami": "Mostra a narrativa e o diferencial.",
-      "projects": "Lista os projetos selecionados.",
-      "skills": "Exibe a matriz de habilidades.",
-      "experience": "Mostra a timeline de experiência.",
-      "contact": "Abre os links de contato.",
-      "cv": "Baixa o currículo em PDF (Curriculo-Felipe_Srutkoske.pdf).",
-      "help": "Lista todos os comandos disponíveis.",
-      "clear": "Limpa o histórico do terminal.",
-      "sudo": "Tenta elevar privilégios. Boa sorte."
-    },
-    "profile": {
-      "name": "Felipe Srutkoske",
-      "role": "Analista de Sistemas / Desenvolvedor Fullstack",
-      "location": "Campo Mourão - PR",
-      "focus": "APIs, sistemas corporativos e infra Linux",
-      "stack": "Node.js, Next.js, React, NestJS, PostgreSQL",
-      "status": "disponível para conexões",
-      "labels": {
-        "name": "name",
-        "role": "role",
-        "location": "location",
-        "focus": "focus",
-        "stack": "stack",
-        "status": "status"
-      }
-    }
+  "works": {
+    "eyebrow": "01 // PROJETOS SELECIONADOS",
+    "heading": "Arquitetura que funciona em produção.",
+    "subheading": "Cada projeto documentado com decisões reais de engenharia, diagramas interativos e escopo de entrega.",
+    "viewCase": "Abrir Case Study",
+    "archiveLabel": "Mais Projetos & Produção",
+    "repo": "Repositório"
   },
-  "whoami": {
-    "title": "whoami",
-    "heading": "Analista de Sistemas / Desenvolvedor Fullstack.",
-    "intro": "Atuo no desenvolvimento e evolução de sistemas, trabalhando em diferentes partes da aplicação, tais como, interfaces web e mobile. Minha stack inclui Node.js, NestJS, PHP, Next.js, React, React Native, Angular, MySQL, Oracle e PostgreSQL, Go, além de Linux e infraestrutura para deploy e manutenção dos sistemas.",
-    "tagline": "Do banco de dados e backend ao deploy em ambientes Linux.",
-    "production": "Desenvolvedor focado em resolver problemas reais. Atuo na implementação de funcionalidades, investigação de incidentes, modelagem de bancos de dados e automação de processos em sistemas utilizados diariamente por empresas.",
-    "quotes": [
-      "Analista de Sistemas / Desenvolvedor Fullstack."
-    ],
-    "config": {
-      "section": "[identity]",
-      "nameKey": "name",
-      "roleKey": "role",
-      "focusKey": "focus",
-      "focusValue": "desenvolvimento de aplicações",
-      "taglineKey": "tagline"
-    },
-    "diff": {
-      "header": "@@ ownership.patch @@",
-      "minus": "apenas escrever código sem acompanhar a aplicação em produção",
-      "plus": "modelar o banco, implementar backend/frontend e garantir estabilidade e deploy em produção"
-    },
-    "status": {
-      "system": "STATUS: SYSTEM_ONLINE & READY",
-      "env": "env: production",
-      "mainRoleLabel": "Atuação Principal",
-      "mainRoleValue": "Sistemas Corporativos & Sustentação",
-      "databasesLabel": "Bancos de Dados",
-      "databasesValue": "MySQL • Oracle • Postgres",
-      "deployLabel": "Deploy & Ambientes",
-      "deployValue": "Linux / SSH • Docker",
-      "educationLabel": "Formação Acadêmica",
-      "educationValue": "Tecnólogo ADS (Formado)"
-    }
-  },
-  "projects": {
-    "title": "projects",
-    "heading": "Principais projetos",
-    "description": "Principais projetos que desenvolvi em minha trajetória profissional.",
-    "changelog": "### changelog",
-    "flags": {
-      "repo": "--view-repo",
-      "demo": "--view-demo",
-      "paper": "--read-paper"
-    },
-    "privateNote": "[ código privado ]"
+  "caseStudy": {
+    "back": "Voltar aos projetos",
+    "year": "Ano",
+    "category": "Categoria",
+    "status": "Status",
+    "problemTitle": "Contexto & Problema",
+    "architectureTitle": "Arquitetura Interativa",
+    "architectureHint": "Clique em qualquer nó abaixo para inspecionar responsabilidades e stack.",
+    "highlightsTitle": "Decisões & Destaques de Engenharia",
+    "repoCta": "Ver código no GitHub",
+    "nextProject": "Próximo Case Study"
   },
   "skills": {
-    "title": "skills",
-    "heading": "Matriz de habilidades",
-    "description": "Stack: ferramentas e tecnologias que utilizo no desenvolvimento.",
-    "windowPath": "htop --sort-by=category",
-    "tasks": "Tasks: {count} total, {count} running",
-    "load": "Load average: 0.42 0.24 0.13",
-    "headers": {
-      "pid": "PID",
-      "process": "PROCESS",
-      "cpu": "CPU%",
-      "bar": "LOAD",
-      "status": "STATUS"
-    },
-    "running": "running"
+    "eyebrow": "02 // PROVA TÉCNICA",
+    "heading": "Sem barras de porcentagem. Apenas onde foi aplicado.",
+    "subheading": "Minha prioridade atual é atuar com Golang em backend/sistemas, mantendo domínio fullstack completo para entregar produto de ponta a ponta.",
+    "priorityBadge": "PRIORIDADE PRINCIPAL",
+    "filterHint": "Clique em uma tecnologia para destacar os projetos onde ela foi usada:",
+    "clearFilter": "Limpar filtro"
   },
   "experience": {
-    "title": "experience",
-    "heading": "Timeline de experiência",
-    "description": "Minha trajetória profissional: de operações de produção a desenvolvimento fullstack.",
-    "windowPath": "~/portfolio/experience.git",
-    "cmd": "git log --graph --all --decorate",
-    "author": "Author:",
-    "date": "Date:",
-    "head": "(HEAD -> main)",
-    "merge": "Merge branch 'production-ops' into 'main'"
+    "eyebrow": "03 // TRAJETÓRIA",
+    "heading": "Experiência & Formação",
+    "subheading": "Sustentação de sistemas multi-empresa em produção, automação de processos e base sólida em engenharia de software."
   },
-  "contact": {
-    "title": "contact",
-    "heading": "Vamos conversar",
-    "description": "Aberto a oportunidades, abaixo estão meus canais de contato.",
-    "windowPath": "~/portfolio/contact.log",
-    "cmd": "./contact.sh --open-channels",
-    "ok": "[OK]",
-    "emailLabel": "email",
-    "githubLabel": "github",
-    "linkedinLabel": "linkedin",
-    "cta": "Envie um e-mail ou conecte-se no LinkedIn.",
-    "flags": {
-      "email": "--send-email",
-      "github": "--follow-github",
-      "linkedin": "--connect-linkedin"
-    }
+  "about": {
+    "eyebrow": "04 // SOBRE & CONTATO",
+    "heading": "Vamos construir algo sólido.",
+    "bio": "Sou Analista de Sistemas e Desenvolvedor Fullstack baseado em Campo Mourão (PR). No dia a dia mantenho sistemas corporativos multi-empresa, modelo bancos MySQL/Oracle, automatizo rotinas em Linux via SSH e construo arquiteturas escaláveis — com foco crescente em Golang.",
+    "copyEmail": "Copiar e-mail",
+    "copied": "Copiado!",
+    "availability": "Aberto a oportunidades Fullstack & Backend (Go)"
   },
   "footer": {
-    "exit": "$ exit",
-    "status": "[ processo finalizado — exit code 0 ]",
-    "rights": "todos os direitos reservados"
+    "rights": "Todos os direitos reservados",
+    "builtWith": "Next.js 16 • Three.js • GSAP"
   }
 }
