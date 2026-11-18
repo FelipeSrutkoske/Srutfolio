@@ -1,194 +1,70 @@
 {
   "metadata": {
-    "title": "Felipe Srutkoske — System Analyst / Fullstack Developer",
-    "description": "Portfolio of a system analyst / fullstack developer: who I am, projects, skills, experience, and contact."
+    "title": "Felipe Srutkoske — Fullstack Developer (Golang Focus)",
+    "description": "Portfolio of Felipe Srutkoske: Fullstack Developer with a primary focus on Golang, microservices architecture, enterprise systems, and Linux infrastructure."
   },
-  "brand": "felipesrutkoske@dev",
-  "skip": "Skip to content",
   "nav": {
-    "aria": "Main navigation",
-    "whoami": "whoami",
-    "projects": "projects",
-    "skills": "skills",
-    "experience": "experience",
-    "contact": "contact",
-    "downloadCv": "resume.pdf",
-    "paths": {
-      "whoami": "~/whoami.md",
-      "projects": "~/projects.sh",
-      "skills": "~/skills.json",
-      "experience": "~/experience.git",
-      "contact": "~/contact.log"
-    },
-    "github": "Open GitHub in a new tab"
-  },
-  "lang": {
-    "aria": "Select language",
-    "en": "EN",
-    "pt": "PT-BR"
+    "works": "Projects",
+    "stack": "Capabilities",
+    "experience": "Experience",
+    "about": "About",
+    "cv": "Resume.pdf",
+    "backHome": "Back to portfolio"
   },
   "hero": {
-    "windowPath": "felipesrutkoske@portfolio: ~",
-    "hint": "hint: type \"help\" to list available commands — or tap a chip",
-    "seed": {
-      "whoamiCmd": "whoami",
-      "introCmd": "cat intro.txt",
-      "introText": "Backend/Fullstack Developer experienced in API development, relational databases, and Linux infrastructure.",
-      "stackLabel": "Stack"
-    }
+    "eyebrow": "FELIPE SRUTKOSKE // EDITION 2026",
+    "priorityTag": "Primary Focus: Golang • Fullstack & Linux Infra",
+    "headlineTop": "FULLSTACK",
+    "headlineMid": "SYSTEMS &",
+    "headlineBottom": "GOLANG.",
+    "subcopy": "I engineer end-to-end systems — from concurrent APIs, microservices, and relational databases to web/mobile apps and Linux production deployments.",
+    "ctaPrimary": "Explore Projects",
+    "ctaSecondary": "Download Resume",
+    "scrollHint": "Scroll to explore"
   },
-  "shell": {
-    "prompt": "$ ",
-    "placeholder": "type a command...",
-    "ariaInput": "Interactive terminal. Type a command and press Enter.",
-    "helpAria": "Show or hide available command list",
-    "tapLabel": "$ execute command:",
-    "commands": {
-      "whoami": "whoami",
-      "projects": "projects",
-      "skills": "skills",
-      "experience": "experience",
-      "contact": "contact",
-      "cv": "cv",
-      "help": "help",
-      "clear": "clear",
-      "sudo": "sudo"
-    },
-    "helpText": "Available commands:",
-    "notFound": "command not found",
-    "unknown": "type \"help\" to view available commands.",
-    "sudo": "permission denied: nice try. root is reserved for coffee buyers.",
-    "navigating": "→ navigating to #{section}",
-    "candidates": "matches:",
-    "output": {
-      "whoamiOpen": "[open] ~/portfolio/whoami.md",
-      "projectsFound": "[ok] {count} files found in ~/portfolio/projects/",
-      "skillsFound": "[ok] htop --tree → {count} active processes",
-      "experienceFound": "[ok] git log --graph → {count} commits",
-      "contactOpen": "[ok] contact channels open"
-    },
-    "commandHelp": {
-      "whoami": "Shows the narrative and core background.",
-      "projects": "Lists selected projects.",
-      "skills": "Displays the skill matrix.",
-      "experience": "Shows the experience timeline.",
-      "contact": "Opens contact links.",
-      "cv": "Downloads resume in PDF format (Curriculo-Felipe_Srutkoske.pdf).",
-      "help": "Lists all available commands.",
-      "clear": "Clears terminal output history.",
-      "sudo": "Attempts privilege escalation. Good luck."
-    },
-    "profile": {
-      "name": "Felipe Srutkoske",
-      "role": "System Analyst / Fullstack Developer",
-      "location": "Campo Mourão - PR",
-      "focus": "APIs, corporate systems & Linux infra",
-      "stack": "Node.js, Next.js, React, NestJS, PostgreSQL",
-      "status": "available for opportunities",
-      "labels": {
-        "name": "name",
-        "role": "role",
-        "location": "location",
-        "focus": "focus",
-        "stack": "stack",
-        "status": "status"
-      }
-    }
+  "works": {
+    "eyebrow": "01 // SELECTED WORKS",
+    "heading": "Architecture built for real production.",
+    "subheading": "Each project is documented with concrete engineering decisions, interactive diagrams, and delivery scope.",
+    "viewCase": "Open Case Study",
+    "archiveLabel": "More Projects & Production",
+    "repo": "Repository"
   },
-  "whoami": {
-    "title": "whoami",
-    "heading": "System Analyst / Fullstack Developer with production experience.",
-    "intro": "I build and maintain applications and enterprise systems. My stack spans database modeling (MySQL, Oracle, PostgreSQL), backend (Node.js, NestJS, PHP), frontend/mobile (Next.js, React, React Native, Angular), and Linux infrastructure with SSH deployments.",
-    "tagline": "From databases and backend APIs to Linux deployments.",
-    "production": "Experience in production environments: investigating security incidents, log analysis, SQL query optimization, and automation scripts (Python/JS).",
-    "quotes": [
-      "System Analyst / Fullstack Developer."
-    ],
-    "config": {
-      "section": "[identity]",
-      "nameKey": "name",
-      "roleKey": "role",
-      "focusKey": "focus",
-      "focusValue": "backend, APIs, and Linux infrastructure",
-      "taglineKey": "tagline"
-    },
-    "diff": {
-      "header": "@@ ownership.patch @@",
-      "minus": "just writing code without following production lifecycle",
-      "plus": "database modeling, backend/frontend implementation, stability and production deployment"
-    },
-    "status": {
-      "system": "STATUS: SYSTEM_ONLINE & READY",
-      "env": "env: production",
-      "mainRoleLabel": "Main Focus",
-      "mainRoleValue": "Backend & Support",
-      "databasesLabel": "Databases",
-      "databasesValue": "MySQL • Oracle • Postgres",
-      "deployLabel": "Deploy & Environments",
-      "deployValue": "Linux / SSH • Docker",
-      "educationLabel": "Education",
-      "educationValue": "Software Dev Degree"
-    }
-  },
-  "projects": {
-    "title": "projects",
-    "heading": "Main projects",
-    "description": "Main projects I developed in my professional career.",
-    "changelog": "### changelog",
-    "flags": {
-      "repo": "--view-repo",
-      "demo": "--view-demo",
-      "paper": "--read-paper"
-    },
-    "privateNote": "[ private code — impact described without exposing implementation ]"
+  "caseStudy": {
+    "back": "Back to projects",
+    "year": "Year",
+    "category": "Category",
+    "status": "Status",
+    "problemTitle": "Context & Problem",
+    "architectureTitle": "Interactive Architecture",
+    "architectureHint": "Click any node below to inspect responsibilities and stack.",
+    "highlightsTitle": "Engineering Decisions & Highlights",
+    "repoCta": "View source on GitHub",
+    "nextProject": "Next Case Study"
   },
   "skills": {
-    "title": "skills",
-    "heading": "Skills matrix",
-    "description": "Stack: tools and technologies I use in development.",
-    "windowPath": "htop --sort-by=category",
-    "tasks": "Tasks: {count} total, {count} running",
-    "load": "Load average: 0.42 0.24 0.13",
-    "headers": {
-      "pid": "PID",
-      "process": "PROCESS",
-      "cpu": "CPU%",
-      "bar": "LOAD",
-      "status": "STATUS"
-    },
-    "running": "running"
+    "eyebrow": "02 // ENGINEERING PROOF",
+    "heading": "No arbitrary percentage bars. Just where it shipped.",
+    "subheading": "My main priority is building backend systems with Golang while keeping fullstack versatility to ship complete products end-to-end.",
+    "priorityBadge": "PRIMARY PRIORITY",
+    "filterHint": "Click a technology to highlight the projects where it was applied:",
+    "clearFilter": "Clear filter"
   },
   "experience": {
-    "title": "experience",
-    "heading": "Experience timeline",
-    "description": "My professional path: from production operations to fullstack development.",
-    "windowPath": "~/portfolio/experience.git",
-    "cmd": "git log --graph --all --decorate",
-    "author": "Author:",
-    "date": "Date:",
-    "head": "(HEAD -> main)",
-    "merge": "Merge branch 'production-ops' into 'main'"
+    "eyebrow": "03 // TRACK RECORD",
+    "heading": "Experience & Education",
+    "subheading": "Multi-tenant enterprise system operations in production, process automation, and software engineering fundamentals."
   },
-  "contact": {
-    "title": "contact",
-    "heading": "Let's talk",
-    "description": "Open to opportunities, if you want to contact me, below are my contact channels.",
-    "windowPath": "~/portfolio/contact.log",
-    "cmd": "./contact.sh --open-channels",
-    "ok": "[OK]",
-    "emailLabel": "email",
-    "githubLabel": "github",
-    "linkedinLabel": "linkedin",
-    "cta": "Send an email or connect on LinkedIn.",
-    "flags": {
-      "email": "--send-email",
-      "github": "--follow-github",
-      "linkedin": "--connect-linkedin"
-    }
+  "about": {
+    "eyebrow": "04 // ABOUT & CONTACT",
+    "heading": "Let's build something solid.",
+    "bio": "I'm a Systems Analyst & Fullstack Developer based in Brazil. Day to day I maintain multi-tenant enterprise systems, model MySQL/Oracle databases, automate Linux/SSH workflows, and architect scalable software — with a growing focus on Golang.",
+    "copyEmail": "Copy email",
+    "copied": "Copied!",
+    "availability": "Open to Fullstack & Backend (Go) opportunities"
   },
   "footer": {
-    "exit": "$ exit",
-    "status": "[ process finished — exit code 0 ]",
-    "rights": "all rights reserved"
+    "rights": "All rights reserved",
+    "builtWith": "Next.js 16 • Three.js • GSAP"
   }
 }

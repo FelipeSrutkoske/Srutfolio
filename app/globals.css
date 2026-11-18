@@ -2,230 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Kernel Aesthetic — base layer.
-   Theme tokens live in tailwind.config.ts (source of truth: DESIGN.md). */
-
 @layer base {
   html {
-    scroll-behavior: smooth;
-    /* Keeps anchored sections clear of the fixed top nav. */
-    scroll-padding-top: 72px;
+    scroll-behavior: auto;
+    background-color: #f4f2ed;
+    color: #0e0e0d;
   }
 
   body {
-    /* Faint phosphor grid — structural, not decorative. */
-    background-image:
-      linear-gradient(rgba(57, 255, 20, 0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(57, 255, 20, 0.025) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-color: #f4f2ed;
+    color: #0e0e0d;
+    overflow-x: hidden;
   }
 
   ::selection {
-    background: #39ff14;
-    color: #053900;
+    background: #e0a714;
+    color: #0e0e0d;
   }
 
   :focus-visible {
-    outline: 1px solid #39ff14;
-    outline-offset: 2px;
+    outline: 2px solid #e0a714;
+    outline-offset: 3px;
   }
 }
 
-/* Blinking block cursor (the only element allowed a low glow, per DESIGN.md). */
-@keyframes cursor-blink {
-  0%,
-  49% {
-    opacity: 1;
+/* Subtle archival paper grain overlay */
+.paper-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Continuous horizontal marquee */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
   }
-  50%,
   100% {
-    opacity: 0;
+    transform: translateX(-50%);
   }
 }
 
-.cursor-blink {
-  animation: cursor-blink 1.06s steps(1) infinite;
-  box-shadow: 0 0 10px #39ff1433;
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
 }
 
-/* Fast line reveal for terminal output. Delay is set inline per line. */
-@keyframes line-in {
-  from {
-    opacity: 0;
-    transform: translateY(2px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.term-line {
-  animation: line-in 140ms ease-out both;
-}
-
-/* Scroll-triggered terminal typing (hero seed, experience, contact).
-   Lines tagged [data-tline] render fully in the SSR HTML; they are hidden
-   only when JS can reveal them (scripting: enabled) and motion is allowed.
-   useTypeOnView flips the root to "play" once the window is ~100% in view,
-   and each line prints with the inline delay it assigned (document order). */
-@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
-  [data-type-phase="armed"] [data-tline] {
-    opacity: 0;
-  }
-
-  [data-type-phase="play"] [data-tline] {
-    animation: line-in 140ms ease-out both;
-  }
-}
-
-/* Subtle scanlines inside the shell window — CRT phosphor feel. */
-.scanlines {
-  background-image: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.14) 0,
-    rgba(0, 0, 0, 0.14) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-}
-
-.bg-fx {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.bg-fx-glitch {
-  position: absolute;
-  inset: 0;
-  opacity: 0.5;
-}
-
-.bg-fx-grid {
-  position: absolute;
-  inset: -96px;
-  background-image:
-    linear-gradient(rgba(57, 255, 20, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(57, 255, 20, 0.045) 1px, transparent 1px);
-  background-size: 96px 96px;
-  animation: bg-grid-drift 80s linear infinite;
-}
-
-.bg-fx-glow {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      55% 40% at 50% 0%,
-      rgba(57, 255, 20, 0.05),
-      transparent 70%
-    ),
-    radial-gradient(
-      35% 30% at 85% 100%,
-      rgba(57, 255, 20, 0.035),
-      transparent 70%
-    );
-  animation: bg-glow-breathe 9s ease-in-out infinite;
-}
-
-.bg-fx-sweep {
-  position: absolute;
-  inset-inline: 0;
-  top: 0;
-  height: 22vh;
-  background: linear-gradient(
-    180deg,
-    transparent,
-    rgba(57, 255, 20, 0.045),
-    transparent
-  );
-  animation: bg-sweep 16s linear infinite;
-}
-
-@keyframes bg-grid-drift {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(96px, 96px, 0);
-  }
-}
-
-@keyframes bg-glow-breathe {
-  0%,
-  100% {
-    opacity: 0.55;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes bg-sweep {
-  from {
-    transform: translate3d(0, -24vh, 0);
-  }
-  to {
-    transform: translate3d(0, 124vh, 0);
-  }
-}
-
-@keyframes section-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .reveal-on-scroll {
-      animation: section-reveal ease-out both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 45%;
-    }
-  }
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #3c4b35 transparent;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #3c4b35;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  .animate-marquee {
+    animation: none;
   }
+}
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* Editorial link underline draw */
+.editorial-link {
+  position: relative;
+  display: inline-block;
+}
 
-  .bg-fx {
-    display: none;
-  }
+.editorial-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.editorial-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
