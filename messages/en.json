@@ -1,70 +1,86 @@
 {
   "metadata": {
-    "title": "Felipe Srutkoske — Fullstack Developer (Golang Focus)",
-    "description": "Portfolio of Felipe Srutkoske: Fullstack Developer with a primary focus on Golang, microservices architecture, enterprise systems, and Linux infrastructure."
+    "title": "Felipe Srutkoske — Backend & Fullstack Engineer",
+    "description": "Engineering portfolio of Felipe Srutkoske: backend and fullstack systems built with Node.js, TypeScript, Go, relational databases, and Linux infrastructure."
   },
   "nav": {
     "works": "Projects",
-    "stack": "Capabilities",
-    "experience": "Experience",
-    "about": "About",
+    "production": "Production",
+    "stack": "Stack",
+    "contact": "Contact",
     "cv": "Resume.pdf",
-    "backHome": "Back to portfolio"
+    "backHome": "Back to portfolio",
+    "menu": "Menu",
+    "close": "Close"
   },
   "hero": {
-    "eyebrow": "FELIPE SRUTKOSKE // EDITION 2026",
-    "priorityTag": "Primary Focus: Golang • Fullstack & Linux Infra",
-    "headlineTop": "FULLSTACK",
-    "headlineMid": "SYSTEMS &",
-    "headlineBottom": "GOLANG.",
-    "subcopy": "I engineer end-to-end systems — from concurrent APIs, microservices, and relational databases to web/mobile apps and Linux production deployments.",
-    "ctaPrimary": "Explore Projects",
-    "ctaSecondary": "Download Resume",
-    "scrollHint": "Scroll to explore"
+    "status": "Open to remote roles · Brazil & International",
+    "headline": "Backend & fullstack engineering for production systems.",
+    "subcopy": "I build APIs, microservices, relational schemas, and web/mobile applications with Node.js, TypeScript, Go, and Linux — from architecture to SSH deployment.",
+    "ctaPrimary": "Explore projects",
+    "ctaSecondary": "Download resume",
+    "factProductionLabel": "Production",
+    "factProductionValue": "1 year operating multi-tenant ERP systems (PHP, Node, MySQL, Oracle, Linux)",
+    "factSystemsLabel": "Open Source",
+    "factSystemsValue": "Node/Nginx/Redis microservices, Go terminal UI, and Rust Linux utility",
+    "factLanguageLabel": "Languages",
+    "factLanguageValue": "Native Portuguese · English B2 (CEFR)",
+    "canvasCaption": "Interactive 3D topology · drag to rotate",
+    "canvasLayers": "Edge · Services · Data"
   },
   "works": {
-    "eyebrow": "01 // SELECTED WORKS",
-    "heading": "Architecture built for real production.",
-    "subheading": "Each project is documented with concrete engineering decisions, interactive diagrams, and delivery scope.",
-    "viewCase": "Open Case Study",
-    "archiveLabel": "More Projects & Production",
-    "repo": "Repository"
+    "eyebrow": "Public Projects",
+    "heading": "Open source and documented architecture.",
+    "subheading": "Auditable GitHub repositories backed by system diagrams, concrete engineering decisions, and explicit trade-offs.",
+    "viewCase": "Read case study",
+    "repo": "GitHub",
+    "moreLabel": "Systems & Linux Desktop",
+    "copyCmd": "Copy",
+    "copiedCmd": "Copied"
+  },
+  "production": {
+    "eyebrow": "Production Engineering",
+    "heading": "Hands-on enterprise production experience.",
+    "subheading": "Direct ownership across live incident troubleshooting, zero-to-production modules, MySQL/Oracle databases, and Linux servers.",
+    "contextLabel": "Context",
+    "executionLabel": "Execution",
+    "outcomeLabel": "Outcome",
+    "educationLabel": "Education",
+    "languagesLabel": "Languages"
+  },
+  "skills": {
+    "eyebrow": "Technical Stack",
+    "heading": "Tools mapped to real production and projects.",
+    "subheading": "Select any technology to inspect where it was used and jump straight to the matching case study or production work.",
+    "appliedIn": "Applied in:"
   },
   "caseStudy": {
     "back": "Back to projects",
     "year": "Year",
-    "category": "Category",
-    "status": "Status",
-    "problemTitle": "Context & Problem",
-    "architectureTitle": "Interactive Architecture",
-    "architectureHint": "Click any node below to inspect responsibilities and stack.",
-    "highlightsTitle": "Engineering Decisions & Highlights",
-    "repoCta": "View source on GitHub",
-    "nextProject": "Next Case Study"
-  },
-  "skills": {
-    "eyebrow": "02 // ENGINEERING PROOF",
-    "heading": "No arbitrary percentage bars. Just where it shipped.",
-    "subheading": "My main priority is building backend systems with Golang while keeping fullstack versatility to ship complete products end-to-end.",
-    "priorityBadge": "PRIMARY PRIORITY",
-    "filterHint": "Click a technology to highlight the projects where it was applied:",
-    "clearFilter": "Clear filter"
-  },
-  "experience": {
-    "eyebrow": "03 // TRACK RECORD",
-    "heading": "Experience & Education",
-    "subheading": "Multi-tenant enterprise system operations in production, process automation, and software engineering fundamentals."
+    "role": "Role",
+    "source": "Source",
+    "problemTitle": "Context & problem",
+    "architectureTitle": "System architecture",
+    "architectureHint": "Select any layer to inspect responsibilities, protocol, and stack.",
+    "decisionsTitle": "Technical decisions & trade-offs",
+    "decisionLabel": "Decision",
+    "rationaleLabel": "Why",
+    "tradeoffLabel": "Trade-off & mitigation",
+    "highlightsTitle": "Delivery scope",
+    "repoCta": "Inspect source on GitHub",
+    "nextProject": "Next case study"
   },
   "about": {
-    "eyebrow": "04 // ABOUT & CONTACT",
-    "heading": "Let's build something solid.",
-    "bio": "I'm a Systems Analyst & Fullstack Developer based in Brazil. Day to day I maintain multi-tenant enterprise systems, model MySQL/Oracle databases, automate Linux/SSH workflows, and architect scalable software — with a growing focus on Golang.",
+    "eyebrow": "About & contact",
+    "heading": "Get in touch.",
+    "bio": "I'm a Systems Analyst and Backend/Fullstack Developer based in Paraná, Brazil. I spent a year maintaining and shipping multi-tenant enterprise software in production (PHP, Node.js, Angular, MySQL, Oracle, and Linux/SSH), and I'm deepening my work in Go, distributed architectures, and systems tooling.",
+    "availability": "Open to remote roles (Brazil & international)",
     "copyEmail": "Copy email",
-    "copied": "Copied!",
-    "availability": "Open to Fullstack & Backend (Go) opportunities"
+    "copied": "Copied",
+    "resume": "Resume PDF"
   },
   "footer": {
     "rights": "All rights reserved",
-    "builtWith": "Next.js 16 • Three.js • GSAP"
+    "sourceCode": "Portfolio source on GitHub"
   }
 }

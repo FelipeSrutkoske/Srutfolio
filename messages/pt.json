@@ -1,70 +1,86 @@
 {
   "metadata": {
-    "title": "Felipe Srutkoske — Fullstack Developer (Foco em Golang)",
-    "description": "Portfólio de Felipe Srutkoske: Desenvolvedor Fullstack com prioridade em Golang, arquitetura de microsserviços, sistemas corporativos e infraestrutura Linux."
+    "title": "Felipe Srutkoske — Engenheiro Backend & Fullstack",
+    "description": "Portfólio técnico de Felipe Srutkoske: engenharia backend e fullstack com Node.js, TypeScript, Go, bancos relacionais e infraestrutura Linux em produção."
   },
   "nav": {
     "works": "Projetos",
-    "stack": "Capacidades",
-    "experience": "Experiência",
-    "about": "Sobre",
+    "production": "Produção",
+    "stack": "Stack",
+    "contact": "Contato",
     "cv": "Currículo.pdf",
-    "backHome": "Voltar ao portfólio"
+    "backHome": "Voltar ao portfólio",
+    "menu": "Menu",
+    "close": "Fechar"
   },
   "hero": {
-    "eyebrow": "FELIPE SRUTKOSKE // EDIÇÃO 2026",
-    "priorityTag": "Foco Principal: Golang • Fullstack & Infra Linux",
-    "headlineTop": "FULLSTACK",
-    "headlineMid": "SYSTEMS &",
-    "headlineBottom": "GOLANG.",
-    "subcopy": "Construo sistemas completos — de APIs concorrentes, microsserviços e bancos relacionais a interfaces web/mobile e deploy em servidores Linux.",
-    "ctaPrimary": "Explorar Projetos",
-    "ctaSecondary": "Baixar Currículo",
-    "scrollHint": "Role para explorar"
+    "status": "Disponível para vagas remotas · Brasil & Internacional",
+    "headline": "Engenharia backend e fullstack para sistemas em produção.",
+    "subcopy": "Projeto APIs, microsserviços, modelagem relacional e interfaces web/mobile com Node.js, TypeScript, Go e Linux — da arquitetura ao deploy via SSH.",
+    "ctaPrimary": "Explorar projetos",
+    "ctaSecondary": "Baixar currículo",
+    "factProductionLabel": "Produção",
+    "factProductionValue": "1 ano em ERP multi-empresa (PHP, Node, MySQL, Oracle, Linux)",
+    "factSystemsLabel": "Open Source",
+    "factSystemsValue": "Microsserviços Node/Nginx/Redis, CLI em Go e app Linux em Rust",
+    "factLanguageLabel": "Idiomas",
+    "factLanguageValue": "Português nativo · Inglês B2 (CEFR)",
+    "canvasCaption": "Topologia 3D interativa · arraste para girar",
+    "canvasLayers": "Edge · Services · Data"
   },
   "works": {
-    "eyebrow": "01 // PROJETOS SELECIONADOS",
-    "heading": "Arquitetura que funciona em produção.",
-    "subheading": "Cada projeto documentado com decisões reais de engenharia, diagramas interativos e escopo de entrega.",
-    "viewCase": "Abrir Case Study",
-    "archiveLabel": "Mais Projetos & Produção",
-    "repo": "Repositório"
+    "eyebrow": "Projetos Públicos",
+    "heading": "Código aberto e arquitetura documentada.",
+    "subheading": "Repositórios auditáveis no GitHub, cada um com diagrama de arquitetura e registro de decisões técnicas e trade-offs.",
+    "viewCase": "Ler estudo de caso",
+    "repo": "GitHub",
+    "moreLabel": "Sistemas & Desktop Linux",
+    "copyCmd": "Copiar",
+    "copiedCmd": "Copiado"
+  },
+  "production": {
+    "eyebrow": "Engenharia em Produção",
+    "heading": "Experiência real em sistemas corporativos.",
+    "subheading": "Atuação direta em sustentação, desenvolvimento ponta a ponta, bancos MySQL/Oracle e infraestrutura Linux.",
+    "contextLabel": "Contexto",
+    "executionLabel": "Execução",
+    "outcomeLabel": "Entrega",
+    "educationLabel": "Formação",
+    "languagesLabel": "Idiomas"
+  },
+  "skills": {
+    "eyebrow": "Capacidades Técnicas",
+    "heading": "Stack aplicada em produção e projetos.",
+    "subheading": "Selecione qualquer tecnologia para ver o contexto real de uso e ir direto para os projetos ou relatos onde ela foi aplicada.",
+    "appliedIn": "Aplicada em:"
   },
   "caseStudy": {
     "back": "Voltar aos projetos",
     "year": "Ano",
-    "category": "Categoria",
-    "status": "Status",
-    "problemTitle": "Contexto & Problema",
-    "architectureTitle": "Arquitetura Interativa",
-    "architectureHint": "Clique em qualquer nó abaixo para inspecionar responsabilidades e stack.",
-    "highlightsTitle": "Decisões & Destaques de Engenharia",
-    "repoCta": "Ver código no GitHub",
-    "nextProject": "Próximo Case Study"
-  },
-  "skills": {
-    "eyebrow": "02 // PROVA TÉCNICA",
-    "heading": "Sem barras de porcentagem. Apenas onde foi aplicado.",
-    "subheading": "Minha prioridade atual é atuar com Golang em backend/sistemas, mantendo domínio fullstack completo para entregar produto de ponta a ponta.",
-    "priorityBadge": "PRIORIDADE PRINCIPAL",
-    "filterHint": "Clique em uma tecnologia para destacar os projetos onde ela foi usada:",
-    "clearFilter": "Limpar filtro"
-  },
-  "experience": {
-    "eyebrow": "03 // TRAJETÓRIA",
-    "heading": "Experiência & Formação",
-    "subheading": "Sustentação de sistemas multi-empresa em produção, automação de processos e base sólida em engenharia de software."
+    "role": "Papel",
+    "source": "Código",
+    "problemTitle": "Contexto e problema",
+    "architectureTitle": "Arquitetura do sistema",
+    "architectureHint": "Selecione uma camada para inspecionar responsabilidades, protocolo e stack.",
+    "decisionsTitle": "Decisões técnicas e trade-offs",
+    "decisionLabel": "Decisão",
+    "rationaleLabel": "Por quê",
+    "tradeoffLabel": "Trade-off e mitigação",
+    "highlightsTitle": "Escopo entregue",
+    "repoCta": "Abrir repositório no GitHub",
+    "nextProject": "Próximo estudo de caso"
   },
   "about": {
-    "eyebrow": "04 // SOBRE & CONTATO",
-    "heading": "Vamos construir algo sólido.",
-    "bio": "Sou Analista de Sistemas e Desenvolvedor Fullstack baseado em Campo Mourão (PR). No dia a dia mantenho sistemas corporativos multi-empresa, modelo bancos MySQL/Oracle, automatizo rotinas em Linux via SSH e construo arquiteturas escaláveis — com foco crescente em Golang.",
+    "eyebrow": "Sobre e contato",
+    "heading": "Vamos conversar.",
+    "bio": "Sou Analista de Sistemas e Desenvolvedor Backend/Fullstack em Campo Mourão (PR). Trabalhei por um ano mantendo e evoluindo sistemas corporativos multi-empresa em produção (PHP, Node.js, Angular, MySQL, Oracle e Linux/SSH) e venho aprofundando meus projetos em Go, arquitetura distribuída e ferramentas de sistemas.",
+    "availability": "Aberto a oportunidades remotas (Brasil e internacional)",
     "copyEmail": "Copiar e-mail",
-    "copied": "Copiado!",
-    "availability": "Aberto a oportunidades Fullstack & Backend (Go)"
+    "copied": "Copiado",
+    "resume": "Currículo PDF"
   },
   "footer": {
     "rights": "Todos os direitos reservados",
-    "builtWith": "Next.js 16 • Three.js • GSAP"
+    "sourceCode": "Código deste portfólio no GitHub"
   }
 }

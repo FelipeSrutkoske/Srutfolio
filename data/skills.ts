@@ -1,10 +1,16 @@
+export interface SkillLink {
+  label: string;
+  labelEn: string;
+  href: string;
+}
+
 export interface SkillItem {
   name: string;
-  tag?: string;
-  tagEn?: string;
+  context: string;
+  contextEn: string;
   note: string;
   noteEn: string;
-  usedIn: string[];
+  links: SkillLink[];
 }
 
 export interface SkillPillar {
@@ -21,34 +27,103 @@ export const skillPillars: SkillPillar[] = [
     id: "backend",
     title: "Backend & Sistemas",
     titleEn: "Backend & Systems",
-    subtitle: "Foco atual em Golang, além de base sólida em Node.js e PHP",
-    subtitleEn: "Current focus on Golang, alongside solid Node.js and PHP experience",
+    subtitle: "APIs, microsserviços, CLIs e regras de negócio em produção",
+    subtitleEn: "APIs, microservices, CLIs, and production business logic",
     items: [
       {
+        name: "Node.js, NestJS & TypeScript",
+        context: "Produção + Projetos",
+        contextEn: "Production + Projects",
+        note: "APIs REST, microsserviços, Nodemailer, testes de integração Jest e tipagem ponta a ponta",
+        noteEn: "REST APIs, microservices, Nodemailer jobs, Jest integration tests, and end-to-end typing",
+        links: [
+          { label: "VehiGo", labelEn: "VehiGo", href: "/projects/vehigo" },
+          { label: "TrackIt", labelEn: "TrackIt", href: "/projects/trackit" },
+          { label: "Skypass", labelEn: "Skypass", href: "/#production" },
+        ],
+      },
+      {
         name: "Go (Golang)",
-        tag: "Foco atual",
-        tagEn: "Current focus",
-        note: "CLIs/TUIs, concorrência, microsserviços e ferramentas de terminal",
-        noteEn: "CLIs/TUIs, concurrency, microservices, and terminal tooling",
-        usedIn: ["go-vit"],
-      },
-      {
-        name: "Node.js & NestJS",
-        note: "APIs REST modulares, microsserviços, testes Jest e automações",
-        noteEn: "Modular REST APIs, microservices, Jest testing, and automations",
-        usedIn: ["tcc", "vehigo", "skypass-features"],
-      },
-      {
-        name: "TypeScript",
-        note: "Tipagem estrita ponta a ponta entre API, web e mobile",
-        noteEn: "End-to-end strict typing across API, web, and mobile",
-        usedIn: ["tcc", "vehigo"],
+        context: "Open Source · Foco ativo",
+        contextEn: "Open Source · Active focus",
+        note: "CLIs/TUIs em binário único, orquestração de processos via os/exec e sistemas concorrentes",
+        noteEn: "Single-binary CLIs/TUIs, process orchestration via os/exec, and concurrent backend tooling",
+        links: [
+          { label: "go-vit", labelEn: "go-vit", href: "/projects/go-vit" },
+        ],
       },
       {
         name: "PHP",
-        note: "Sustentação e criação de módulos corporativos multi-empresa em produção",
-        noteEn: "Production maintenance and zero-to-one enterprise modules",
-        usedIn: ["skypass-features"],
+        context: "Produção",
+        contextEn: "Production",
+        note: "Evolução, debugging e módulos construídos do zero em ERP corporativo multi-empresa",
+        noteEn: "Debugging, maintenance, and zero-to-production modules in multi-tenant enterprise software",
+        links: [
+          { label: "Skypass", labelEn: "Skypass", href: "/#production" },
+        ],
+      },
+      {
+        name: "Rust",
+        context: "Open Source · Sistemas",
+        contextEn: "Open Source · Systems",
+        note: "Binários nativos Linux com GTK4/Libadwaita e inspeção segura de requisições HTTP",
+        noteEn: "Native Linux binaries with GTK4/Libadwaita and safe HTTP redirect inspection",
+        links: [
+          { label: "Look4", labelEn: "Look4", href: "/projects/look4" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "data-infra",
+    title: "Dados & Infraestrutura Linux",
+    titleEn: "Data & Linux Infrastructure",
+    subtitle: "Modelagem relacional, cache, proxy reverso e operação em servidor",
+    subtitleEn: "Relational modeling, caching, reverse proxies, and server operations",
+    items: [
+      {
+        name: "PostgreSQL, MySQL & Oracle",
+        context: "Produção + Projetos",
+        contextEn: "Production + Projects",
+        note: "Modelagem DER, constraints, queries analíticas multi-empresa e integridade transacional",
+        noteEn: "ERD modeling, constraints, multi-tenant SQL queries, and transactional integrity",
+        links: [
+          { label: "Skypass", labelEn: "Skypass", href: "/#production" },
+          { label: "VehiGo", labelEn: "VehiGo", href: "/projects/vehigo" },
+          { label: "TrackIt", labelEn: "TrackIt", href: "/projects/trackit" },
+        ],
+      },
+      {
+        name: "Redis 7",
+        context: "Projetos",
+        contextEn: "Projects",
+        note: "Cache em memória integrado à arquitetura de microsserviços containerizada",
+        noteEn: "In-memory caching integrated into containerized microservice architectures",
+        links: [
+          { label: "VehiGo", labelEn: "VehiGo", href: "/projects/vehigo" },
+        ],
+      },
+      {
+        name: "Linux, SSH, Nginx & Docker",
+        context: "Produção + Projetos",
+        contextEn: "Production + Projects",
+        note: "Deploys via SSH, investigação de incidentes, API Gateway com proxy reverso e Docker Compose",
+        noteEn: "SSH production deploys, incident response, reverse-proxy API Gateway, and Docker Compose",
+        links: [
+          { label: "Skypass", labelEn: "Skypass", href: "/#production" },
+          { label: "VehiGo", labelEn: "VehiGo", href: "/projects/vehigo" },
+          { label: "Look4", labelEn: "Look4", href: "/projects/look4" },
+        ],
+      },
+      {
+        name: "Python (Automação)",
+        context: "Produção",
+        contextEn: "Production",
+        note: "Monitoramento automatizado de uso de disco em VMs Linux via SSH",
+        noteEn: "Automated Linux VM disk-usage monitoring over SSH",
+        links: [
+          { label: "Skypass", labelEn: "Skypass", href: "/#production" },
+        ],
       },
     ],
   },
@@ -56,59 +131,49 @@ export const skillPillars: SkillPillar[] = [
     id: "frontend-mobile",
     title: "Frontend & Mobile",
     titleEn: "Frontend & Mobile",
-    subtitle: "Interfaces web modernas, estilização e aplicativos mobile",
-    subtitleEn: "Modern web interfaces, styling systems, and mobile apps",
+    subtitle: "Entrega completa quando o produto precisa de interface web ou app",
+    subtitleEn: "End-to-end delivery when products need web dashboards or mobile apps",
     items: [
       {
         name: "Next.js & React",
-        note: "Dashboards administrativos, SSR/SSG e interfaces web modernas",
-        noteEn: "Admin dashboards, SSR/SSG, and modern web interfaces",
-        usedIn: ["tcc"],
-      },
-      {
-        name: "Tailwind CSS",
-        note: "Design systems responsivos, prototipação rápida e interfaces consistentes",
-        noteEn: "Responsive design systems, rapid prototyping, and consistent UI",
-        usedIn: ["tcc"],
+        context: "Projetos",
+        contextEn: "Projects",
+        note: "Dashboards administrativos, SSR/SSG, roteamento i18n e interfaces responsivas",
+        noteEn: "Admin dashboards, SSR/SSG, i18n routing, and responsive web interfaces",
+        links: [
+          { label: "TrackIt", labelEn: "TrackIt", href: "/projects/trackit" },
+        ],
       },
       {
         name: "React Native & Expo",
-        note: "Apps iOS/Android com Google Maps, JWT e integração de APIs",
-        noteEn: "iOS/Android apps with Google Maps, JWT, and API integrations",
-        usedIn: ["tcc", "vehigo"],
+        context: "Projetos",
+        contextEn: "Projects",
+        note: "Apps Android/iOS com Google Maps, autenticação JWT e integração com APIs REST",
+        noteEn: "Android/iOS apps with Google Maps, JWT auth, and REST API integrations",
+        links: [
+          { label: "VehiGo", labelEn: "VehiGo", href: "/projects/vehigo" },
+          { label: "TrackIt", labelEn: "TrackIt", href: "/projects/trackit" },
+        ],
       },
       {
         name: "Angular",
-        note: "Evolução e debugging de sistemas web corporativos",
-        noteEn: "Evolution and debugging of enterprise web systems",
-        usedIn: ["skypass-features"],
-      },
-    ],
-  },
-  {
-    id: "data-infra",
-    title: "Dados, Infra Linux & Rust",
-    titleEn: "Data, Linux Infra & Rust",
-    subtitle: "Do DER ao deploy via SSH, proxies reversos e binários nativos",
-    subtitleEn: "From ERD modeling to SSH deploys, reverse proxies, and native binaries",
-    items: [
-      {
-        name: "PostgreSQL, MySQL & Oracle",
-        note: "Modelagem relacional, queries otimizadas e integridade transacional",
-        noteEn: "Relational modeling, query tuning, and transactional integrity",
-        usedIn: ["tcc", "vehigo", "skypass-features"],
+        context: "Produção",
+        contextEn: "Production",
+        note: "Manutenção, evolução de telas e debugging em sistemas corporativos",
+        noteEn: "Maintenance, UI evolution, and debugging in enterprise web systems",
+        links: [
+          { label: "Skypass", labelEn: "Skypass", href: "/#production" },
+        ],
       },
       {
-        name: "Linux / SSH / Nginx / Docker",
-        note: "Deploys em produção, API Gateway, automação Python e mitigação de incidentes",
-        noteEn: "Production deploys, API Gateway, Python automation, and incident mitigation",
-        usedIn: ["vehigo", "skypass-features", "look4"],
-      },
-      {
-        name: "Rust (GTK4 / Desktop)",
-        note: "Utilitários nativos para GNOME/Linux com foco em velocidade e segurança",
-        noteEn: "Native GNOME/Linux utilities focused on speed and safety",
-        usedIn: ["look4"],
+        name: "Tailwind CSS",
+        context: "Projetos",
+        contextEn: "Projects",
+        note: "Sistemas de design enxutos com foco em contraste, hierarquia e responsividade",
+        noteEn: "Lean design systems focused on contrast, visual hierarchy, and responsiveness",
+        links: [
+          { label: "TrackIt", labelEn: "TrackIt", href: "/projects/trackit" },
+        ],
       },
     ],
   },

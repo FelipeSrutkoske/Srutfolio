@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Kinetic Editorial — Tailwind theme tokens.
+ * Editorial Engineering — Tailwind theme tokens.
  * Warm archival paper + charcoal ink + editorial mustard accent.
  */
 const config: Config = {
@@ -20,19 +20,18 @@ const config: Config = {
         "ink-muted": "#52504A",
         "ink-subtle": "#78756E",
         mustard: "#E0A714",
-        "mustard-deep": "#C48E0A",
+        "mustard-deep": "#B37E06",
         "mustard-soft": "rgba(224, 167, 20, 0.14)",
         rule: "rgba(14, 14, 13, 0.14)",
         "rule-strong": "rgba(14, 14, 13, 0.85)",
       },
       fontFamily: {
-        display: ["var(--font-syne)", "ui-sans-serif", "system-ui", "sans-serif"],
-        serif: ["var(--font-serif)", "Georgia", "serif"],
+        display: ["var(--font-display)", "ui-sans-serif", "system-ui", "sans-serif"],
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ["var(--font-jetbrains)", "ui-monospace", "monospace"],
       },
       maxWidth: {
-        "container-max": "1320px",
+        "container-max": "1240px",
       },
     },
   },

@@ -4,9 +4,21 @@
 
 @layer base {
   html {
-    scroll-behavior: auto;
     background-color: #f4f2ed;
     color: #0e0e0d;
+    scroll-padding-top: 4rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-snap-type: y proximity;
+    }
   }
 
   body {
@@ -26,35 +38,17 @@
   }
 }
 
-/* Subtle archival paper grain overlay */
+/* Subtle archival paper texture */
 .paper-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.028'/%3E%3C/svg%3E");
 }
 
-/* Continuous horizontal marquee */
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 28s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
-    animation: none;
-  }
+/* Technical blueprint grid for architectural diagrams & 3D canvas frame */
+.blueprint-grid {
+  background-size: 20px 20px;
+  background-image:
+    linear-gradient(to right, rgba(14, 14, 13, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 14, 13, 0.055) 1px, transparent 1px);
 }
 
 /* Editorial link underline draw */
@@ -73,7 +67,7 @@
   background-color: currentColor;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .editorial-link:hover::after {

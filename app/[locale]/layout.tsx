@@ -1,33 +1,23 @@
 import "@/app/globals.css";
-import {
-  Instrument_Serif,
-  Inter,
-  JetBrains_Mono,
-  Syne,
-} from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import { routing } from "@/i18n";
-import SmoothScroll from "@/components/smooth-scroll";
-import CustomCursor from "@/components/custom-cursor";
+import { profile } from "@/data/profile";
 
-const syne = Syne({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-syne",
-  display: "swap",
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-serif",
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -53,13 +43,13 @@ export async function generateMetadata({
 }: LayoutProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
-  const path = locale === routing.defaultLocale ? "/" : `/${locale}`;
+  const path = `/${locale}`;
 
   return {
     metadataBase: new URL("https://felipesrutkoske.dev"),
     title: {
       default: t("title"),
-      template: `%s | ${t("title")}`,
+      template: `%s | ${profile.name}`,
     },
     description: t("description"),
     alternates: {
@@ -76,6 +66,11 @@ export async function generateMetadata({
       type: "website",
       url: path,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+    },
   };
 }
 
@@ -89,15 +84,49 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   setRequestLocale(locale);
   const messages = await getMessages();
 
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: profile.name,
+    url: `https://felipesrutkoske.dev/${locale}`,
+    email: `mailto:${profile.email}`,
+    jobTitle: locale === "en" ? profile.roleEn : profile.role,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Campo Mourão",
+      addressRegion: "PR",
+      addressCountry: "BR",
+    },
+    sameAs: [profile.githubUrl, profile.linkedinUrl],
+    knowsAbout: [
+      "Node.js",
+      "TypeScript",
+      "NestJS",
+      "Go (Golang)",
+      "PostgreSQL",
+      "MySQL",
+      "Oracle Database",
+      "Redis",
+      "Linux",
+      "Nginx",
+      "Docker",
+      "Rust",
+      "Next.js",
+      "React Native",
+    ],
+  };
+
   return (
     <html
       lang={locale}
-      className={`${syne.variable} ${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="paper-grain bg-paper font-sans text-ink antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <SmoothScroll />
-          <CustomCursor />
           {children}
         </NextIntlClientProvider>
         <Analytics />
